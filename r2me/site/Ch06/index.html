@@ -1,0 +1,2280 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="通往数据工程师之路">
+      
+      
+      
+        <meta name="author" content="Gravpher@163.com">
+      
+      
+        <link rel="canonical" href="https://r2de.goujianing.com/Ch06/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
+    
+    
+      
+        <title>1 概述 - The Road to Data Engineer</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1118c9be.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ba0d045b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../css/katex.css">
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css">
+    
+    
+      
+  
+
+
+
+  
+  
+
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-160637954-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#first-class" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="The Road to Data Engineer" class="md-header__button md-logo" aria-label="The Road to Data Engineer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M220.8 123.3c1 .5 1.8 1.7 3 1.7 1.1 0 2.8-.4 2.9-1.5.2-1.4-1.9-2.3-3.2-2.9-1.7-.7-3.9-1-5.5-.1-.4.2-.8.7-.6 1.1.3 1.3 2.3 1.1 3.4 1.7zm-21.9 1.7c1.2 0 2-1.2 3-1.7 1.1-.6 3.1-.4 3.5-1.6.2-.4-.2-.9-.6-1.1-1.6-.9-3.8-.6-5.5.1-1.3.6-3.4 1.5-3.2 2.9.1 1 1.8 1.5 2.8 1.4zM420 403.8c-3.6-4-5.3-11.6-7.2-19.7-1.8-8.1-3.9-16.8-10.5-22.4-1.3-1.1-2.6-2.1-4-2.9-1.3-.8-2.7-1.5-4.1-2 9.2-27.3 5.6-54.5-3.7-79.1-11.4-30.1-31.3-56.4-46.5-74.4-17.1-21.5-33.7-41.9-33.4-72C311.1 85.4 315.7.1 234.8 0 132.4-.2 158 103.4 156.9 135.2c-1.7 23.4-6.4 41.8-22.5 64.7-18.9 22.5-45.5 58.8-58.1 96.7-6 17.9-8.8 36.1-6.2 53.3-6.5 5.8-11.4 14.7-16.6 20.2-4.2 4.3-10.3 5.9-17 8.3s-14 6-18.5 14.5c-2.1 3.9-2.8 8.1-2.8 12.4 0 3.9.6 7.9 1.2 11.8 1.2 8.1 2.5 15.7.8 20.8-5.2 14.4-5.9 24.4-2.2 31.7 3.8 7.3 11.4 10.5 20.1 12.3 17.3 3.6 40.8 2.7 59.3 12.5 19.8 10.4 39.9 14.1 55.9 10.4 11.6-2.6 21.1-9.6 25.9-20.2 12.5-.1 26.3-5.4 48.3-6.6 14.9-1.2 33.6 5.3 55.1 4.1.6 2.3 1.4 4.6 2.5 6.7v.1c8.3 16.7 23.8 24.3 40.3 23 16.6-1.3 34.1-11 48.3-27.9 13.6-16.4 36-23.2 50.9-32.2 7.4-4.5 13.4-10.1 13.9-18.3.4-8.2-4.4-17.3-15.5-29.7zM223.7 87.3c9.8-22.2 34.2-21.8 44-.4 6.5 14.2 3.6 30.9-4.3 40.4-1.6-.8-5.9-2.6-12.6-4.9 1.1-1.2 3.1-2.7 3.9-4.6 4.8-11.8-.2-27-9.1-27.3-7.3-.5-13.9 10.8-11.8 23-4.1-2-9.4-3.5-13-4.4-1-6.9-.3-14.6 2.9-21.8zM183 75.8c10.1 0 20.8 14.2 19.1 33.5-3.5 1-7.1 2.5-10.2 4.6 1.2-8.9-3.3-20.1-9.6-19.6-8.4.7-9.8 21.2-1.8 28.1 1 .8 1.9-.2-5.9 5.5-15.6-14.6-10.5-52.1 8.4-52.1zm-13.6 60.7c6.2-4.6 13.6-10 14.1-10.5 4.7-4.4 13.5-14.2 27.9-14.2 7.1 0 15.6 2.3 25.9 8.9 6.3 4.1 11.3 4.4 22.6 9.3 8.4 3.5 13.7 9.7 10.5 18.2-2.6 7.1-11 14.4-22.7 18.1-11.1 3.6-19.8 16-38.2 14.9-3.9-.2-7-1-9.6-2.1-8-3.5-12.2-10.4-20-15-8.6-4.8-13.2-10.4-14.7-15.3-1.4-4.9 0-9 4.2-12.3zm3.3 334c-2.7 35.1-43.9 34.4-75.3 18-29.9-15.8-68.6-6.5-76.5-21.9-2.4-4.7-2.4-12.7 2.6-26.4v-.2c2.4-7.6.6-16-.6-23.9-1.2-7.8-1.8-15 .9-20 3.5-6.7 8.5-9.1 14.8-11.3 10.3-3.7 11.8-3.4 19.6-9.9 5.5-5.7 9.5-12.9 14.3-18 5.1-5.5 10-8.1 17.7-6.9 8.1 1.2 15.1 6.8 21.9 16l19.6 35.6c9.5 19.9 43.1 48.4 41 68.9zm-1.4-25.9c-4.1-6.6-9.6-13.6-14.4-19.6 7.1 0 14.2-2.2 16.7-8.9 2.3-6.2 0-14.9-7.4-24.9-13.5-18.2-38.3-32.5-38.3-32.5-13.5-8.4-21.1-18.7-24.6-29.9s-3-23.3-.3-35.2c5.2-22.9 18.6-45.2 27.2-59.2 2.3-1.7.8 3.2-8.7 20.8-8.5 16.1-24.4 53.3-2.6 82.4.6-20.7 5.5-41.8 13.8-61.5 12-27.4 37.3-74.9 39.3-112.7 1.1.8 4.6 3.2 6.2 4.1 4.6 2.7 8.1 6.7 12.6 10.3 12.4 10 28.5 9.2 42.4 1.2 6.2-3.5 11.2-7.5 15.9-9 9.9-3.1 17.8-8.6 22.3-15 7.7 30.4 25.7 74.3 37.2 95.7 6.1 11.4 18.3 35.5 23.6 64.6 3.3-.1 7 .4 10.9 1.4 13.8-35.7-11.7-74.2-23.3-84.9-4.7-4.6-4.9-6.6-2.6-6.5 12.6 11.2 29.2 33.7 35.2 59 2.8 11.6 3.3 23.7.4 35.7 16.4 6.8 35.9 17.9 30.7 34.8-2.2-.1-3.2 0-4.2 0 3.2-10.1-3.9-17.6-22.8-26.1-19.6-8.6-36-8.6-38.3 12.5-12.1 4.2-18.3 14.7-21.4 27.3-2.8 11.2-3.6 24.7-4.4 39.9-.5 7.7-3.6 18-6.8 29-32.1 22.9-76.7 32.9-114.3 7.2zm257.4-11.5c-.9 16.8-41.2 19.9-63.2 46.5-13.2 15.7-29.4 24.4-43.6 25.5s-26.5-4.8-33.7-19.3c-4.7-11.1-2.4-23.1 1.1-36.3 3.7-14.2 9.2-28.8 9.9-40.6.8-15.2 1.7-28.5 4.2-38.7 2.6-10.3 6.6-17.2 13.7-21.1.3-.2.7-.3 1-.5.8 13.2 7.3 26.6 18.8 29.5 12.6 3.3 30.7-7.5 38.4-16.3 9-.3 15.7-.9 22.6 5.1 9.9 8.5 7.1 30.3 17.1 41.6 10.6 11.6 14 19.5 13.7 24.6zM173.3 148.7c2 1.9 4.7 4.5 8 7.1 6.6 5.2 15.8 10.6 27.3 10.6 11.6 0 22.5-5.9 31.8-10.8 4.9-2.6 10.9-7 14.8-10.4s5.9-6.3 3.1-6.6-2.6 2.6-6 5.1c-4.4 3.2-9.7 7.4-13.9 9.8-7.4 4.2-19.5 10.2-29.9 10.2s-18.7-4.8-24.9-9.7c-3.1-2.5-5.7-5-7.7-6.9-1.5-1.4-1.9-4.6-4.3-4.9-1.4-.1-1.8 3.7 1.7 6.5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Road to Data Engineer
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1 概述
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换至深色模式"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="切换至浅色模式"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/George-Gou/r2de/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    George-Gou/r2de
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="The Road to Data Engineer" class="md-nav__button md-logo" aria-label="The Road to Data Engineer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M220.8 123.3c1 .5 1.8 1.7 3 1.7 1.1 0 2.8-.4 2.9-1.5.2-1.4-1.9-2.3-3.2-2.9-1.7-.7-3.9-1-5.5-.1-.4.2-.8.7-.6 1.1.3 1.3 2.3 1.1 3.4 1.7zm-21.9 1.7c1.2 0 2-1.2 3-1.7 1.1-.6 3.1-.4 3.5-1.6.2-.4-.2-.9-.6-1.1-1.6-.9-3.8-.6-5.5.1-1.3.6-3.4 1.5-3.2 2.9.1 1 1.8 1.5 2.8 1.4zM420 403.8c-3.6-4-5.3-11.6-7.2-19.7-1.8-8.1-3.9-16.8-10.5-22.4-1.3-1.1-2.6-2.1-4-2.9-1.3-.8-2.7-1.5-4.1-2 9.2-27.3 5.6-54.5-3.7-79.1-11.4-30.1-31.3-56.4-46.5-74.4-17.1-21.5-33.7-41.9-33.4-72C311.1 85.4 315.7.1 234.8 0 132.4-.2 158 103.4 156.9 135.2c-1.7 23.4-6.4 41.8-22.5 64.7-18.9 22.5-45.5 58.8-58.1 96.7-6 17.9-8.8 36.1-6.2 53.3-6.5 5.8-11.4 14.7-16.6 20.2-4.2 4.3-10.3 5.9-17 8.3s-14 6-18.5 14.5c-2.1 3.9-2.8 8.1-2.8 12.4 0 3.9.6 7.9 1.2 11.8 1.2 8.1 2.5 15.7.8 20.8-5.2 14.4-5.9 24.4-2.2 31.7 3.8 7.3 11.4 10.5 20.1 12.3 17.3 3.6 40.8 2.7 59.3 12.5 19.8 10.4 39.9 14.1 55.9 10.4 11.6-2.6 21.1-9.6 25.9-20.2 12.5-.1 26.3-5.4 48.3-6.6 14.9-1.2 33.6 5.3 55.1 4.1.6 2.3 1.4 4.6 2.5 6.7v.1c8.3 16.7 23.8 24.3 40.3 23 16.6-1.3 34.1-11 48.3-27.9 13.6-16.4 36-23.2 50.9-32.2 7.4-4.5 13.4-10.1 13.9-18.3.4-8.2-4.4-17.3-15.5-29.7zM223.7 87.3c9.8-22.2 34.2-21.8 44-.4 6.5 14.2 3.6 30.9-4.3 40.4-1.6-.8-5.9-2.6-12.6-4.9 1.1-1.2 3.1-2.7 3.9-4.6 4.8-11.8-.2-27-9.1-27.3-7.3-.5-13.9 10.8-11.8 23-4.1-2-9.4-3.5-13-4.4-1-6.9-.3-14.6 2.9-21.8zM183 75.8c10.1 0 20.8 14.2 19.1 33.5-3.5 1-7.1 2.5-10.2 4.6 1.2-8.9-3.3-20.1-9.6-19.6-8.4.7-9.8 21.2-1.8 28.1 1 .8 1.9-.2-5.9 5.5-15.6-14.6-10.5-52.1 8.4-52.1zm-13.6 60.7c6.2-4.6 13.6-10 14.1-10.5 4.7-4.4 13.5-14.2 27.9-14.2 7.1 0 15.6 2.3 25.9 8.9 6.3 4.1 11.3 4.4 22.6 9.3 8.4 3.5 13.7 9.7 10.5 18.2-2.6 7.1-11 14.4-22.7 18.1-11.1 3.6-19.8 16-38.2 14.9-3.9-.2-7-1-9.6-2.1-8-3.5-12.2-10.4-20-15-8.6-4.8-13.2-10.4-14.7-15.3-1.4-4.9 0-9 4.2-12.3zm3.3 334c-2.7 35.1-43.9 34.4-75.3 18-29.9-15.8-68.6-6.5-76.5-21.9-2.4-4.7-2.4-12.7 2.6-26.4v-.2c2.4-7.6.6-16-.6-23.9-1.2-7.8-1.8-15 .9-20 3.5-6.7 8.5-9.1 14.8-11.3 10.3-3.7 11.8-3.4 19.6-9.9 5.5-5.7 9.5-12.9 14.3-18 5.1-5.5 10-8.1 17.7-6.9 8.1 1.2 15.1 6.8 21.9 16l19.6 35.6c9.5 19.9 43.1 48.4 41 68.9zm-1.4-25.9c-4.1-6.6-9.6-13.6-14.4-19.6 7.1 0 14.2-2.2 16.7-8.9 2.3-6.2 0-14.9-7.4-24.9-13.5-18.2-38.3-32.5-38.3-32.5-13.5-8.4-21.1-18.7-24.6-29.9s-3-23.3-.3-35.2c5.2-22.9 18.6-45.2 27.2-59.2 2.3-1.7.8 3.2-8.7 20.8-8.5 16.1-24.4 53.3-2.6 82.4.6-20.7 5.5-41.8 13.8-61.5 12-27.4 37.3-74.9 39.3-112.7 1.1.8 4.6 3.2 6.2 4.1 4.6 2.7 8.1 6.7 12.6 10.3 12.4 10 28.5 9.2 42.4 1.2 6.2-3.5 11.2-7.5 15.9-9 9.9-3.1 17.8-8.6 22.3-15 7.7 30.4 25.7 74.3 37.2 95.7 6.1 11.4 18.3 35.5 23.6 64.6 3.3-.1 7 .4 10.9 1.4 13.8-35.7-11.7-74.2-23.3-84.9-4.7-4.6-4.9-6.6-2.6-6.5 12.6 11.2 29.2 33.7 35.2 59 2.8 11.6 3.3 23.7.4 35.7 16.4 6.8 35.9 17.9 30.7 34.8-2.2-.1-3.2 0-4.2 0 3.2-10.1-3.9-17.6-22.8-26.1-19.6-8.6-36-8.6-38.3 12.5-12.1 4.2-18.3 14.7-21.4 27.3-2.8 11.2-3.6 24.7-4.4 39.9-.5 7.7-3.6 18-6.8 29-32.1 22.9-76.7 32.9-114.3 7.2zm257.4-11.5c-.9 16.8-41.2 19.9-63.2 46.5-13.2 15.7-29.4 24.4-43.6 25.5s-26.5-4.8-33.7-19.3c-4.7-11.1-2.4-23.1 1.1-36.3 3.7-14.2 9.2-28.8 9.9-40.6.8-15.2 1.7-28.5 4.2-38.7 2.6-10.3 6.6-17.2 13.7-21.1.3-.2.7-.3 1-.5.8 13.2 7.3 26.6 18.8 29.5 12.6 3.3 30.7-7.5 38.4-16.3 9-.3 15.7-.9 22.6 5.1 9.9 8.5 7.1 30.3 17.1 41.6 10.6 11.6 14 19.5 13.7 24.6zM173.3 148.7c2 1.9 4.7 4.5 8 7.1 6.6 5.2 15.8 10.6 27.3 10.6 11.6 0 22.5-5.9 31.8-10.8 4.9-2.6 10.9-7 14.8-10.4s5.9-6.3 3.1-6.6-2.6 2.6-6 5.1c-4.4 3.2-9.7 7.4-13.9 9.8-7.4 4.2-19.5 10.2-29.9 10.2s-18.7-4.8-24.9-9.7c-3.1-2.5-5.7-5-7.7-6.9-1.5-1.4-1.9-4.6-4.3-4.9-1.4-.1-1.8 3.7 1.7 6.5z"/></svg>
+
+    </a>
+    The Road to Data Engineer
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/George-Gou/r2de/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    George-Gou/r2de
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        前言
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        I 计算机网络
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="I 计算机网络" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          I 计算机网络
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch01/" class="md-nav__link">
+        1 概述
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch01/TCP_IP_Contents/" class="md-nav__link">
+        2 TCP/IP 协议
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch01/internet_sercurity/" class="md-nav__link">
+        3 网络安全基础
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch01/Problems/1-1/" class="md-nav__link">
+        计算机网络 面试问题
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        II 操作系统
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="II 操作系统" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          II 操作系统
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch02/" class="md-nav__link">
+        1 概述
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch02/linux_basic/" class="md-nav__link">
+        2 Linux 基础
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        操作系统 面试问题
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="操作系统 面试问题" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          操作系统 面试问题
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch02/Problems/1-1/" class="md-nav__link">
+        3-1 Linux基础
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch02/Problems/1-2/" class="md-nav__link">
+        3-2 操作系统基础
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        III 数据结构与算法
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="III 数据结构与算法" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          III 数据结构与算法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch03/" class="md-nav__link">
+        1 概述
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch03/prepare/" class="md-nav__link">
+        2 预备知识
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch03/array/" class="md-nav__link">
+        3 数组
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch03/linklist.md" class="md-nav__link">
+        4 链表
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      <label class="md-nav__link" for="__nav_4_5">
+        算法
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="算法" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          算法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch03/algorithm/1-1Sort/" class="md-nav__link">
+        3-1 排序算法
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch02/algorithm/1-2.md" class="md-nav__link">
+        3-2 操作系统基础
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch03/program_trick/" class="md-nav__link">
+        编程技巧
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        IV 编程语言基础
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="IV 编程语言基础" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          IV 编程语言基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch04/" class="md-nav__link">
+        1 概述
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      <label class="md-nav__link" for="__nav_5_2">
+        2 Java
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="2 Java" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          2 Java
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch04/Problems/1-1/" class="md-nav__link">
+        3-1 Java基础
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch04/Problems/1-2/" class="md-nav__link">
+        3-2 Java框架
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch04/Problems/1-2/" class="md-nav__link">
+        3-2 Java Web项目实战
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch04/array/" class="md-nav__link">
+        3 Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch04/linklist.md" class="md-nav__link">
+        4 链表
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch04/program_trick/" class="md-nav__link">
+        编程技巧
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        V 数据库
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="V 数据库" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          V 数据库
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch05/" class="md-nav__link">
+        1 概述
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
+      
+      <label class="md-nav__link" for="__nav_6_2">
+        2 Java
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="2 Java" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          2 Java
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch05/news_project/1-1.md" class="md-nav__link">
+        3-1 Java基础
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch05/news_project/1-2.md" class="md-nav__link">
+        3-2 Java框架
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch05/news_project/1-2.md" class="md-nav__link">
+        3-2 Java Web项目实战
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch04/array/" class="md-nav__link">
+        3 Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch04/linklist.md" class="md-nav__link">
+        4 链表
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch04/program_trick/" class="md-nav__link">
+        编程技巧
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      <label class="md-nav__link" for="__nav_7">
+        VI 大数据
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="VI 大数据" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          VI 大数据
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1 概述
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        1 概述
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#computer-and-os" class="md-nav__link">
+    计算机与操作系统
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-linux" class="md-nav__link">
+    进程管理
+  </a>
+  
+    <nav class="md-nav" aria-label="进程管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#htop" class="md-nav__link">
+    htop 各参数含义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    进程状态
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    进程控制
+  </a>
+  
+    <nav class="md-nav" aria-label="进程控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux-distributions" class="md-nav__link">
+    Linux 发行版
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux 发行版">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debian-branch" class="md-nav__link">
+    Debian 分支
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#red-hat-branch" class="md-nav__link">
+    Red Hat 分支
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arch-linux-branch" class="md-nav__link">
+    Arch Linux 分支
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux-around-us" class="md-nav__link">
+    我们身边的 Linux
+  </a>
+  
+    <nav class="md-nav" aria-label="我们身边的 Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#smartphones" class="md-nav__link">
+    智能手机
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servers" class="md-nav__link">
+    服务器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#digital-tv" class="md-nav__link">
+    电视机顶盒
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-linux" class="md-nav__link">
+    让自己的计算机用上 Linux
+  </a>
+  
+    <nav class="md-nav" aria-label="让自己的计算机用上 Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-vm-softwares" class="md-nav__link">
+    获取虚拟机管理软件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-vm-images" class="md-nav__link">
+    获取 Xubuntu 虚拟机镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-vm" class="md-nav__link">
+    启动虚拟机
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lug-ustc" class="md-nav__link">
+    中科大开源社群：LUG@USTC
+  </a>
+  
+    <nav class="md-nav" aria-label="中科大开源社群：LUG@USTC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#join-lug-ustc" class="md-nav__link">
+    了解与加入 LUG@USTC
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#questions" class="md-nav__link">
+    思考题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    引用来源
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="array.md" class="md-nav__link">
+        2 大数据开源生态
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
+      
+      <label class="md-nav__link" for="__nav_7_3">
+        3 新闻数据分析项目实战
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="3 新闻数据分析项目实战" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          3 新闻数据分析项目实战
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="news_project/background/" class="md-nav__link">
+        3-1 项目背景介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="news_project/1-1hadoop/" class="md-nav__link">
+        3-1 Hadoop集群搭建
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="news_project/1-2.md" class="md-nav__link">
+        3-2 Java框架
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="news_project/1-2.md" class="md-nav__link">
+        3-2 Java Web项目实战
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="array.md" class="md-nav__link">
+        3 Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="linklist.md" class="md-nav__link">
+        4 链表
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="program_trick.md" class="md-nav__link">
+        编程技巧
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        VII 深度学习
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="VII 深度学习" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          VII 深度学习
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch07/" class="md-nav__link">
+        1 基本概念
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" type="checkbox" id="__nav_8_2" >
+      
+      <label class="md-nav__link" for="__nav_8_2">
+        2 QuickStart
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="2 QuickStart" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_2">
+          <span class="md-nav__icon md-icon"></span>
+          2 QuickStart
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch07/7.1.md" class="md-nav__link">
+        7.1 Description of quicksort
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_3" type="checkbox" id="__nav_8_3" >
+      
+      <label class="md-nav__link" for="__nav_8_3">
+        3 项目实战
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="3 项目实战" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_3">
+          <span class="md-nav__icon md-icon"></span>
+          3 项目实战
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ch07/eqt/" class="md-nav__link">
+        7.1 Earthquake Transformer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap08/8.2.md" class="md-nav__link">
+        8.2 Counting sort
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap08/8.3.md" class="md-nav__link">
+        8.3 Radix sort
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap08/8.4.md" class="md-nav__link">
+        8.4 Bucket sort
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_3_5" type="checkbox" id="__nav_8_3_5" >
+      
+      <label class="md-nav__link" for="__nav_8_3_5">
+        Chap 8 Problems
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chap 8 Problems" data-md-level="3">
+        <label class="md-nav__title" for="__nav_8_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Chap 8 Problems
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap08/Problems/8-1.md" class="md-nav__link">
+        8-1 Probabilistic lower bounds on comparison sorting
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap08/Problems/8-2.md" class="md-nav__link">
+        8-2 Sorting in place in linear time
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap08/Problems/8-3.md" class="md-nav__link">
+        8-3 Sorting variable-length items
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap08/Problems/8-4.md" class="md-nav__link">
+        8-4 Water jugs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap08/Problems/8-5.md" class="md-nav__link">
+        8-5 Average sorting
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap08/Problems/8-6.md" class="md-nav__link">
+        8-6 Lower bound on merging sorted lists
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap08/Problems/8-7.md" class="md-nav__link">
+        8-7 The $0$-$1$ sorting lemma and columnsort
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_4" type="checkbox" id="__nav_8_4" >
+      
+      <label class="md-nav__link" for="__nav_8_4">
+        9 Medians and Order Statistics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="9 Medians and Order Statistics" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_4">
+          <span class="md-nav__icon md-icon"></span>
+          9 Medians and Order Statistics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap09/9.1.md" class="md-nav__link">
+        9.1 Minimum and maximum
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap09/9.2.md" class="md-nav__link">
+        9.2 Selection in expected linear time
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap09/9.3.md" class="md-nav__link">
+        9.3 Selection in worst-case linear time
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_4_4" type="checkbox" id="__nav_8_4_4" >
+      
+      <label class="md-nav__link" for="__nav_8_4_4">
+        Chap 9 Problems
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chap 9 Problems" data-md-level="3">
+        <label class="md-nav__title" for="__nav_8_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Chap 9 Problems
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap09/Problems/9-1.md" class="md-nav__link">
+        9-1 Largest $i$ numbers in sorted order
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap09/Problems/9-2.md" class="md-nav__link">
+        9-2 Weighted median
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap09/Problems/9-3.md" class="md-nav__link">
+        9-3 Small order statistics
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap09/Problems/9-4.md" class="md-nav__link">
+        9-4 Alternative analysis of randomized selection
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#computer-and-os" class="md-nav__link">
+    计算机与操作系统
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-linux" class="md-nav__link">
+    进程管理
+  </a>
+  
+    <nav class="md-nav" aria-label="进程管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#htop" class="md-nav__link">
+    htop 各参数含义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    进程状态
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    进程控制
+  </a>
+  
+    <nav class="md-nav" aria-label="进程控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux-distributions" class="md-nav__link">
+    Linux 发行版
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux 发行版">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debian-branch" class="md-nav__link">
+    Debian 分支
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#red-hat-branch" class="md-nav__link">
+    Red Hat 分支
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arch-linux-branch" class="md-nav__link">
+    Arch Linux 分支
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux-around-us" class="md-nav__link">
+    我们身边的 Linux
+  </a>
+  
+    <nav class="md-nav" aria-label="我们身边的 Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#smartphones" class="md-nav__link">
+    智能手机
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servers" class="md-nav__link">
+    服务器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#digital-tv" class="md-nav__link">
+    电视机顶盒
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-linux" class="md-nav__link">
+    让自己的计算机用上 Linux
+  </a>
+  
+    <nav class="md-nav" aria-label="让自己的计算机用上 Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-vm-softwares" class="md-nav__link">
+    获取虚拟机管理软件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-vm-images" class="md-nav__link">
+    获取 Xubuntu 虚拟机镜像
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-vm" class="md-nav__link">
+    启动虚拟机
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lug-ustc" class="md-nav__link">
+    中科大开源社群：LUG@USTC
+  </a>
+  
+    <nav class="md-nav" aria-label="中科大开源社群：LUG@USTC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#join-lug-ustc" class="md-nav__link">
+    了解与加入 LUG@USTC
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#questions" class="md-nav__link">
+    思考题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    引用来源
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/George-Gou/r2de/edit/master/docs/Ch06/index.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="first-class">大数据{#first-class}<a class="headerlink" href="#first-class" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">导言</p>
+<p>本章介绍大数据平台的基础架构、大数据工程师技术栈、大数据平台项目需求调研与设计</p>
+</div>
+<h2 id="computer-and-os">计算机与操作系统<a class="headerlink" href="#computer-and-os" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">现代个人计算机操作系统典型功能</p>
+<p>通常来说，一个现代个人计算机操作系统会包含以下的功能<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>：</p>
+<ul>
+<li>
+<p>进程管理：操作系统之上运行的各类程序都以进程的形式存在，而通常计算机的中央处理器只有几个。为了能让许多进程并发执行，需要操作系统进行调度。</p>
+</li>
+<li>
+<p>内存管理：内存是操作系统和进程用来临时存储数据的介质。计算机的内存是有限的，而且通常还是多层次的，因此操作系统需要合理分配和回收内存。</p>
+</li>
+<li>
+<p>文件管理：为了管理计算机上的文件和数据，操作系统需要建立一个合适的数据结构来存储它们，即文件系统。</p>
+</li>
+<li>
+<p>网络通信：为了能和互联网上的其它计算机进行有效的联络，一个公认的通信协议（如当今互联网主流的 TCP/IP）是必要的。操作系统需要有能力实现各种必需的网络通信方式。</p>
+</li>
+<li>
+<p>安全机制：很多个人计算机和商业服务器上的数据都很敏感，因此操作系统必须配备一个安全机制用于保护数据不被未授权的人士获取，以及保护计算机免于各类计算机病毒的攻击。</p>
+</li>
+<li>
+<p>用户界面：现代的个人计算机操作系统通常都会包含一个图形化的用户界面，从而方便用户与计算机打交道，并且提升用户体验。</p>
+</li>
+<li>
+<p>驱动程序：驱动程序是直接与硬件交互的软件，使用驱动程序才能利用好计算机的硬件，因此操作系统要有能力与驱动程序对接以发挥硬件的功能。</p>
+</li>
+</ul>
+</div>
+<h2 id="process-linux">进程管理<a class="headerlink" href="#process-linux" title="Permanent link">&para;</a></h2>
+<p><div class="highlight"><pre><span></span><code>$ sudo yum -y install htop
+$ htop
+</code></pre></div>
+<a href="https://htop.dev/">htop</a> 是一款强大的进程管理工具，关于这款工具的详细使用，可以参考<a href="https://www.cnblogs.com/programmer-tlh/p/11726016.html">这篇文章</a>。
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://gitee.com/georgegou/gravitychina/raw/picture/202112111551849.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">htop软件显示的进程</div>
+</center></p>
+<h3 id="htop">htop 各参数含义<a class="headerlink" href="#htop" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">进程属性</th>
+<th>意义/目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">PID</td>
+<td>Process ID，标识进程的唯一性。</td>
+</tr>
+<tr>
+<td align="center">USER</td>
+<td>进程的用户权限</td>
+</tr>
+<tr>
+<td align="center">PRI</td>
+<td>realtime <strong>priority</strong>，进程调度的优先级，值越大，优先级越高。</td>
+</tr>
+<tr>
+<td align="center">NI</td>
+<td>NICE，越nice越对其他进程越好，意味着其值越大，优先级越低，非实时调度Nice值就是0</td>
+</tr>
+<tr>
+<td align="center">VIRT</td>
+<td>virtual memory usage，进程所占用的虚拟内存。</td>
+</tr>
+<tr>
+<td align="center">RES</td>
+<td>resident memory usage 常驻内存，不包换swap out，进程当前的内存大小</td>
+</tr>
+<tr>
+<td align="center">SHR</td>
+<td>shared memory，共享内存，。</td>
+</tr>
+<tr>
+<td align="center">S</td>
+<td>State，标识进程的状态：能不能运行 (Running / sleep)，能不能投入运行 (interruptible / uninterruptible)，让不让运行 (stop / trace)，程序还在不在 (Zombie)，大写的R、S、Z分别表示运行、睡眠（等待唤醒）、僵尸状态。</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">进程与线程</p>
+<p>进程是<strong>系统资源分配的基本单位</strong>，而线程是<strong>独立调度的基本单位</strong>，也就是说<strong>一个进程里面有多个线程</strong>。</p>
+<p>比如说浏览器进程，里面包含了HTTP请求、服务器响应、前端渲染等线程等等，一个进程里面包含可以包含多个线程。</p>
+</div>
+<p>!!! question 计算机如何同时运行多个线程?<br />
+哪怕是多核CPU在很短的时间中，只能执行几个程序，那么计算机是如何并行跑几十个、乃至几百个程序呢？</p>
+<p>实际上，确实很短的时间内，CPU只能执行一个程序。严格意义上说，CPU在一个时钟周期执行一个程序，另一个时钟周期就开始执行另一个程序，由于CPU时钟周期很短，站在用户的角度讲，这些程序处于并行状态。
+例如：CPU主频为3.0GHZ，则一个时钟周期 = 1 / 3GHZ = 1 / 3*10^9HZ ≈ 0.33 * 10^-9 秒</p>
+<h3 id="_1">进程状态<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p><center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="https://gitee.com/georgegou/gravitychina/raw/picture/202112121335771.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">进程的多种状态</div>
+</center>
+如上图所示，Main memory表示程序读入内存运行的主空间，Secondary memory表示因阻塞或者其他原因导致程序存入交换空间。</p>
+<p>程序进程的大致过程为：首先创建进程（运行程序），程序读入内存，进入就绪状态，调入进程，使得进程使用CPU进入运行状态。如果出现 Timeout，耗尽CPU时间片(time slice)，重新回到就绪状态；如果运行中出现外部设备IO或者其他事件（Event Wait），进入事件等待状态，也就是阻塞（Blocked）。期间，如果发生内存不足的情况，程序将进入交换区挂起，等待下一次调用。</p>
+<h2 id="_2">进程控制<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>用户如何控制进程？进程间不共享内存，共享内存地址在进程外。因此，操作进程必须借助操作系统。<strong>信号</strong>是Unix系统中进程之间相互通信的一种机制。</p>
+<div class="highlight"><pre><span></span><code>─<span class="o">(</span><span class="m">03</span>:08:27<span class="o">)</span>──&gt; ping localhost                                                                                                                  <span class="m">1</span> ↵ ──<span class="o">(</span>Sun,Dec12<span class="o">)</span>─┘ 
+PING localhost <span class="o">(</span><span class="m">127</span>.0.0.1<span class="o">)</span> <span class="m">56</span><span class="o">(</span><span class="m">84</span><span class="o">)</span> bytes of data.
+<span class="m">64</span> bytes from localhost <span class="o">(</span><span class="m">127</span>.0.0.1<span class="o">)</span>: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">1</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">64</span> <span class="nv">time</span><span class="o">=</span><span class="m">0</span>.049 ms
+<span class="m">64</span> bytes from localhost <span class="o">(</span><span class="m">127</span>.0.0.1<span class="o">)</span>: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">2</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">64</span> <span class="nv">time</span><span class="o">=</span><span class="m">0</span>.032 ms
+<span class="m">64</span> bytes from localhost <span class="o">(</span><span class="m">127</span>.0.0.1<span class="o">)</span>: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">3</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">64</span> <span class="nv">time</span><span class="o">=</span><span class="m">0</span>.030 ms
+^Z
+<span class="o">[</span><span class="m">1</span><span class="o">]</span>  + <span class="m">6768</span> suspended  ping localhost
+<span class="o">(</span>base<span class="o">)</span> ┌─<span class="o">(</span>~<span class="o">)</span>───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────<span class="o">(</span>george@-c:pts/1<span class="o">)</span>─┐
+└─<span class="o">(</span><span class="m">03</span>:10:03<span class="o">)</span>──&gt; <span class="nb">jobs</span>  <span class="c1">#可以查看到前面用CRTL+Z，挂起的程序                                                                                                                         20 ↵ ──(Sun,Dec12)─┘ </span>
+<span class="o">[</span><span class="m">1</span><span class="o">]</span>  + suspended  ping localhost
+<span class="o">(</span>base<span class="o">)</span> ┌─<span class="o">(</span>~<span class="o">)</span>───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────<span class="o">(</span>george@-c:pts/1<span class="o">)</span>─┐
+└─<span class="o">(</span><span class="m">03</span>:10:20<span class="o">)</span>──&gt; <span class="nb">bg</span>  %1           <span class="c1">#后台运行 [1]号Job                                                                                                                      ──(Sun,Dec12)─┘ </span>
+<span class="o">[</span><span class="m">1</span><span class="o">]</span>  + <span class="m">6768</span> continued  ping localhost
+<span class="m">64</span> bytes from localhost <span class="o">(</span><span class="m">127</span>.0.0.1<span class="o">)</span>: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">4</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">64</span> <span class="nv">time</span><span class="o">=</span><span class="m">0</span>.036 ms
+<span class="o">(</span>base<span class="o">)</span> ┌─<span class="o">(</span>~<span class="o">)</span>───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────<span class="o">(</span>george@-c:pts/1<span class="o">)</span>─┐
+└─<span class="o">(</span><span class="m">03</span>:10:47<span class="o">)</span>──&gt; <span class="m">64</span> bytes from localhost <span class="o">(</span><span class="m">127</span>.0.0.1<span class="o">)</span>: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">5</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">64</span> <span class="nv">time</span><span class="o">=</span><span class="m">0</span>.035 ms                                                                ──<span class="o">(</span>Sun,Dec12<span class="o">)</span>─┘ 
+<span class="m">64</span> bytes from localhost <span class="o">(</span><span class="m">127</span>.0.0.1<span class="o">)</span>: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">6</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">64</span> <span class="nv">time</span><span class="o">=</span><span class="m">0</span>.036 ms
+<span class="m">64</span> bytes from localhost <span class="o">(</span><span class="m">127</span>.0.0.1<span class="o">)</span>: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">7</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">64</span> <span class="nv">time</span><span class="o">=</span><span class="m">0</span>.030 ms
+<span class="m">64</span> bytes from localhost <span class="o">(</span><span class="m">127</span>.0.0.1<span class="o">)</span>: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">8</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">64</span> <span class="nv">time</span><span class="o">=</span><span class="m">0</span>.031 ms
+<span class="m">64</span> bytes from localhost <span class="o">(</span><span class="m">127</span>.0.0.1<span class="o">)</span>: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">9</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">64</span> <span class="nv">time</span><span class="o">=</span><span class="m">0</span>.032 ms
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">脱离终端</p>
+</div>
+<p>注意到一但我们结束一个会话（session），所开启的服务或者进程会随之关闭，这是因为终端关闭时会发送（singal hangup），该信号会广播到会话下每一个进程，默认退出程序运行。如果我们不想退出该怎么办？如何我们开启了一个jupyter notebook服务，想让他一直在后台进行，可以在命令前加上<code>nohup</code>，来保证进程不会信号影响。</p>
+<div class="admonition tip">
+<p class="admonition-title">守护进程（daemon）</p>
+</div>
+<p>无论是Web服务、数据库服务、</p>
+<p><div class="highlight"><pre><span></span><code><span class="o">(</span>base<span class="o">)</span> <span class="o">{</span><span class="m">21</span>-12-12 <span class="m">3</span>:14<span class="o">}</span>-c:~ george% <span class="nb">kill</span> -l <span class="c1">#查看kill命令,第九个是Kill 信号的命令</span>
+HUP INT QUIT ILL TRAP ABRT BUS FPE KILL USR1 SEGV USR2 PIPE ALRM TERM STKFLT CHLD CONT STOP TSTP TTIN TTOU URG XCPU XFSZ VTALRM PROF WINCH POLL PWR SYS
+</code></pre></div>
+所以我们通过<code>kill -9 pid(进程号)</code>就可以结束某个进程。</p>
+<h3 id="linux-distributions">Linux 发行版<a class="headerlink" href="#linux-distributions" title="Permanent link">&para;</a></h3>
+<p>一个典型的 Linux 发行版除了 Linux 内核以外，通常还会包括一系列 GNU 工具和库、一些附带的软件、说明文档、一个桌面系统、一个窗口管理器和一个桌面环境。不同的发行版之间除了 Linux 内核以外的其它部分都有可能不一样，因此有的时候我们对比某两种发行版的时候会觉得它们看起来像是完全不一样的操作系统，然而实质上它们却拥有着相同的核心，即 Linux 内核。</p>
+<p>这里给读者介绍若干桌面和服务器环境中主流的发行版分支：</p>
+<h4 id="debian-branch">Debian 分支<a class="headerlink" href="#debian-branch" title="Permanent link">&para;</a></h4>
+<p>Debian 是一个完全由自由软件构成的类 UNIX 操作系统，第一个版本发布于 1993 年 9 月 15 日，迄今仍在维护，是最早的发行版之一。其以坚持自由软件精神和生态环境优良而出名，拥有庞大的用户群体，甚至自己也成为了一个主流的子框架，称为“Debian GNU/Linux”。</p>
+<p><img alt="" src="images/Debian-Logo.png" /></p>
+<p class="caption">Debian 图标</p>
+
+<p>Debian GNU/Linux 也派生了很多发行版，其中最为著名的便是 Ubuntu（官方译名“友邦拓”）。Ubuntu 由英国的 Canonical 公司主导创立，是一个主打桌面应用的操作系统。其为一般用户提供了一个时新且稳定的由自由软件构成的操作系统，且拥有庞大的社群力量和资源，十分适合普通用户使用。</p>
+<p><img alt="" src="images/Ubuntu-Logo.png" /></p>
+<p class="caption">Ubuntu 图标</p>
+
+<h4 id="red-hat-branch">Red Hat 分支<a class="headerlink" href="#red-hat-branch" title="Permanent link">&para;</a></h4>
+<p>Red Hat Linux 是美国的 Red Hat 公司发行的一个发行版，第一个版本发布于 1994 年 11 月 3 日，也是一个历史悠久的发行版。它曾经也广为使用，但在 2003 年 Red Hat 公司停止了对它的维护，转而将精力都投身于其企业版 Red Hat Enterprise Linux（简称 RHEL）上，Red Hat Linux 自此完结，而商业市场导向的 RHEL 维护至今。</p>
+<p><img alt="" src="images/Red-Hat-Logo.png" /></p>
+<p class="caption">Red Hat 公司商标，RHEL 是其旗下产品</p>
+
+<p>在 Red Hat Linux 在停止官方更新后，由社群启动的 Fedora 项目接管了其源代码并构筑了自己的更新，演变成了如今的 Fedora 发行版。Fedora 是一套功能完备且更新迅速的系统，且本身计划也受到了 Red Hat 公司的赞助，成为了公司测试新技术的平台。</p>
+<p><img alt="" src="images/Fedora-Logo.png" /></p>
+<p class="caption">Fedora 图标</p>
+
+<p>虽然 RHEL 是一个收费的、商业化的系统，但是其遵循 GNU 通用公共许可证，因此会开放源代码。编译这些源代码可以重新得到一个可以使用的操作系统，即一个新的发行版：CentOS（Community Enterprise Operating System，社区版企业操作系统）。因为 CentOS 几乎完全编译自 RHEL 的代码，所以其也像 RHEL 一样具有企业级别的稳定性，适合在要求高度稳定的服务器上运行。但在 2020 年 12 月，CentOS 社区在其博客中宣布未来的重点转向 CentOS Stream，这是一个全新的滚动发行版，和往日注重稳定性的 CentOS 形成鲜明对比。</p>
+<p><img alt="" src="images/CentOS-Logo.png" /></p>
+<p class="caption">CentOS 图标</p>
+
+<h4 id="arch-linux-branch">Arch Linux 分支<a class="headerlink" href="#arch-linux-branch" title="Permanent link">&para;</a></h4>
+<p>Arch Linux 是一个基于 x86-64 架构的 Linux 发行版，不过因为其内核默认就包含了部分非自由的模块，所以其未受到 GNU 计划的官方支持。即便如此，Arch Linux 也因其“简单、现代、实在、人本、万能”的宗旨赢得了 Linux 中坚用户的广泛青睐。不过，Arch Linux 对这个宗旨的定义和其它发行版有所区别。通常的操作系统为了方便用户快速上手，都是尽可能隐藏底层细节，从而避免用户了解操作系统的运行知识即可直接使用。但是 Arch Linux 则是重在构建优雅、极简的代码结构，这方便了使用者去理解系统，但不可避免地要求使用者自身愿意去了解操作系统的运作方式。某种程度上说，它的“简单”和“人本”注重的是方便用户通过了解而去最大化地利用它，而不是采取屏蔽工作原理的方式来降低使用门槛。因此，本书不建议初学者直接上手 Arch Linux，但十分推荐在读者对 Linux 有进一步了解之后去探索它。</p>
+<p><img alt="" src="images/Arch-Linux-Logo.png" /></p>
+<p class="caption">Arch Linux 图标</p>
+
+<p>Arch Linux 拥有强大的功能，但因其特殊的理念使得用户不易使用。为了能让一般用户也能用上 Arch Linux 的强大功能，它的变种 Manjaro 发行版于 2011 年问世。Manjaro 发行版基于 Arch Linux，但更注重易用，因而更适合一般用户。</p>
+<p><img alt="" src="images/Manjaro-Logo.png" /></p>
+<p class="caption">Manjaro 图标</p>
+
+<p>以上是若干个常见的 Linux 发行版系列，由上文可见，Linux 的发行版非常丰富，不同的发行版有其各自的特性，因而可以面向不同的用户满足独特的需求。对于新手来说，一个拥有丰富的图形界面的发行版更加适合初步探索和后续使用。<strong>本书推荐初次接触 Linux 的读者优先采用 Ubuntu 发行版或者它的子发行版（Lubuntu, Xubuntu 等）</strong> 作为自己接触和探索 Linux 的平台，在以后可以自行上手其它发行版。</p>
+<div class="admonition note">
+<p class="admonition-title">Linux 总结</p>
+<p>这一章或许对于一些读者来说不太容易一次读懂，因为不同于 Windows 或者 macOS 这种受到一家商业公司完全控制和规划的系统那样有着比较单一和线性的发展轨迹，Linux 其独特的自由、开源的特性注定了它的发展进程必定是一个去中心化的、非线性的形式。因此，Linux 的历史虽然只有短短三十年，却充满着复杂的脉络和丰富的细节。但是正是因为 Linux 在如此繁茂的分枝之上结出诸多硕果，我们才能从某种角度感受到开源社区文化的强大活力，反过来也正是这种活力才能让 Linux 有着与其它闭源商业操作系统不一样的叙事。</p>
+<p>回到本章的标题：什么是 Linux？这个问题在不同的语境下有不同的答案：它可以指代 Linux 内核，也可能指代一个或者多个 Linux 发行版。在日常领域或是作为新手接触到的情境来看，这个词通常都是指代后者，而且往往指的是 GNU/Linux 的发行版。</p>
+</div>
+<h2 id="linux-around-us">我们身边的 Linux<a class="headerlink" href="#linux-around-us" title="Permanent link">&para;</a></h2>
+<p>虽然在个人电脑上不太常见，但 Linux 的各类发行版其实早已深入我们的日常生活。下面是几个例子：</p>
+<h3 id="smartphones">智能手机<a class="headerlink" href="#smartphones" title="Permanent link">&para;</a></h3>
+<p>智能手机目前有两个主流的操作系统：苹果公司研发的 iOS 操作系统和谷歌公司研发的 Android 操作系统，而 Android 正是 Linux 的一个知名的发行版。与通常安装在通用计算机上的 GNU/Linux 分支不同，Android 属于 Android/Linux 分支，这个分支通常活跃在智能手机和嵌入式设备的舞台上。</p>
+<p>由谷歌公司推出的 Android 叫做 Android 原生系统，而基于该原生系统诞生出来的各类独特的操作系统就是 Android/Linux 系下的子发行版。Android/Linux 下的子发行版很多，如华为公司的 EMUI 操作系统和小米公司的 MIUI 操作系统等。</p>
+<p><img alt="" src="images/Android-10-Native.png" /></p>
+<p class="caption">Android 10 原生界面</p>
+
+<h3 id="servers">服务器<a class="headerlink" href="#servers" title="Permanent link">&para;</a></h3>
+<p>现代人的生活已经很难离开互联网了，在互联网上，我们可以访问各式各样的网站、利用在线社交平台分享自己的生活、或者是使用联机办公工具和同事协同工作。通常来说这些网站和软件的提供商都需要设立他们自己的计算机来完成计算、存储和通信的功能，这种计算机就被称为服务器。和个人计算机不同，服务器通常都不会使用 Windows 或者 macOS 这种个人计算机操作系统，事实上绝大部分的服务器维护人员都愿意选择一些 Linux 发行版作为它们的操作系统，因为许多 Linux 发行版界面简洁，功能强大，而且某些发行版也是受到专业计算机企业的服务支持的（如前文提到的 RHEL 和 CentOS）。</p>
+<p>另一类有名的服务器操作系统是微软公司的 Window Server 系列，不过其流行程度比不上各类 Linux 发行版。</p>
+<p><img alt="" src="images/Windows-Server.png" /></p>
+<p class="caption">Windows Server 图标</p>
+
+<h3 id="digital-tv">电视机顶盒<a class="headerlink" href="#digital-tv" title="Permanent link">&para;</a></h3>
+<p>比起十几年前采用传统线路的电视，现在国内很多家庭里的电视都换成了智能数字电视，这些电视通常会配备一个机顶盒来控制电视播放的内容。实际上，电视机顶盒就是一个嵌入式设备，而 Android/Linux 分支下的各类发行版正是主流的嵌入式操作系统，如谷歌公司为数字电视专门推出的 Android TV 操作系统。</p>
+<p><img alt="" src="images/Android-TV.png" /></p>
+<p class="caption">Android TV 图标</p>
+
+<h2 id="use-linux">让自己的计算机用上 Linux<a class="headerlink" href="#use-linux" title="Permanent link">&para;</a></h2>
+<p>有很多尚未接触过 Linux 的读者看到这里可能已经在期待或者计划让自己尽快开始使用 Linux 了。事实上，如果把 Linux 看作一个领域，那它的确是一个重视实践的领域。而且出于学习目的，在阅读本书未来的章节时在手头准备一个随时可用的 Linux 发行版是十分关键和有益的。因此，本书<strong>强烈建议各位读者在本机安装一个属于自己的 Linux 发行版</strong>，以供随时实践。</p>
+<p>在本机上安装一个 Linux 发行版有很多种选择，如：安装方法可以选择实机安装或虚拟机安装；发行版则可以在诸多选项中任意抉择。然而，对于新手来说，本书<strong>不建议直接采用实机安装 Linux</strong>，因为这样做会有以下缺点：</p>
+<ul>
+<li>在安装过程中不理解关键的选项（如：磁盘分区、挂载、交换空间分配等）的意义，很容易做出错误的决定；</li>
+<li>错误的配置可能导致自己原先本机上的操作系统和数据遭到不可逆转的损坏；</li>
+<li>部分硬件可能对安装的发行版缺少兼容，从而导致意外安装失败。</li>
+<li>如果安装的过程中选择下载附加工具，可能会因为默认镜像在国外而导致下载十分缓慢，从而让安装流程变得很漫长。</li>
+</ul>
+<p>鉴于以上问题对于新手来说十分常见，本书的编写组为各位读者专门设计了另外一种更为安全高效的方法：在虚拟机上运行 Linux 发行版镜像。虚拟机简单来说可以视作一个安全可靠的沙盒，它受到虚拟机管理软件的管理，而管理软件是直接安装在自己目前常用的操作系统上的。本书<strong>推荐使用虚拟机运行安装完毕的 Linux 镜像</strong>，因为这样会有如下优点：</p>
+<ul>
+<li>读者仍然可以安心地使用自己当前的操作系统，因为虚拟机不干涉当前电脑操作系统的配置。</li>
+<li>无需考虑底层硬件的兼容性问题，稳定性大幅提升。</li>
+<li>系统已经安装完毕，使用虚拟机打开时相当于直接开机，无需经历安装流程。</li>
+<li>如果在虚拟机中发生任何错误，可以通过重置、回溯虚拟机镜像的方法无痛修复，而不会伤害到读者计算机上的操作系统和数据。</li>
+</ul>
+<p>因此，本书讲主要讲解如何为自己搭建一个安全高效的 Linux 虚拟机。</p>
+<h3 id="get-vm-softwares">获取虚拟机管理软件<a class="headerlink" href="#get-vm-softwares" title="Permanent link">&para;</a></h3>
+<p>现在在 Windows / macOS 上主流的虚拟机管理软件有：</p>
+<ul>
+<li>
+<p><a href="https://www.vmware.com/cn/products/workstation-player/workstation-player-evaluation.html">VMware Workstation Player</a> 是 VMware 公司推出的一款 Windows 上专业的虚拟机管理软件。</p>
+</li>
+<li>
+<p><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a> 是甲骨文公司发行的通用虚拟机管理系统，支持 Windows 和 macOS，且遵循 GPLv2 开源。</p>
+</li>
+</ul>
+<p>以上两款软件都是免费的，且支持中文。点击上面对应的链接进入官方下载页面获取安装包，获取完毕后，直接双击打开安装程序，根据安装步骤完成安装即可。</p>
+<h3 id="get-vm-images">获取 Xubuntu 虚拟机镜像<a class="headerlink" href="#get-vm-images" title="Permanent link">&para;</a></h3>
+<p>Xubuntu 是 Ubuntu 的一个子发行版，它与 Ubuntu 非常类似，但其体积更小，性能需求更少，因此十分适合各种不同性能的电脑安装使用。本书的编写组已经制作了 Xubuntu 的虚拟机镜像，供读者按需求下载使用。</p>
+<p><a href="https://ftp.lug.ustc.edu.cn/101/vm/VMware-XUbuntu-18.04-32bit.ova">VMware Xubuntu 18.04 32 位</a></p>
+<p><a href="https://ftp.lug.ustc.edu.cn/101/vm/VMware-XUbuntu-18.04-64bit.ova">VMware Xubuntu 18.04 64 位</a></p>
+<p><a href="https://ftp.lug.ustc.edu.cn/101/vm/VirtualBox-XUbuntu-18.04-32bit.ova">VirtualBox Xubuntu 18.04 32 位</a></p>
+<p><a href="https://ftp.lug.ustc.edu.cn/101/vm/VirtualBox-XUbuntu-18.04-64bit.ova">VirtualBox Xubuntu 18.04 64 位</a></p>
+<p>推荐选用和自己系统字长相匹配的镜像。如果不确定自己的电脑是 32 位还是 64 位，可选择 32 位版。</p>
+<details class="tip"><summary>Xubuntu</summary><p>Xubuntu 的设计理念是创造一个易用且更轻量的 Ubuntu。与 Ubuntu 不同的是，它采用的是更轻量和兼容性更强的 Xfce 桌面系统，并基于 GTK 运行。Xubuntu 和 Ubuntu 使用完全一致的软件源，因此 Xubuntu 能运行绝大部分 Ubuntu 下的软件。</p>
+<p><img alt="" src="images/Xubuntu-Logo.png" />
+<p class="caption">Xubuntu 图标</p></p>
+</details>
+<p>如果读者想要自己安装 Ubuntu 操作系统的话，以下两篇博客也可以参考：</p>
+<ul>
+<li><a href="https://ibug.io/p/15-cn">在 Windows 下使用 VMware Workstation 安装 Ubuntu</a>（另有<a href="https://ibug.io/p/15">英文版</a>）</li>
+<li><a href="https://blog.taoky.moe/2019-02-23/installing-os-on-vm.html">在 macOS 下使用 VMware Fusion 和 VirtualBox 安装 Ubuntu</a></li>
+</ul>
+<p>对于日常惯用 Windows 10 用户来说，还有另一种更为便捷的安装 Linux 的方法。自 1607 版本起，Windows 10 支持适用于 Linux 的 Windows 子系统，可以在该子系统下安装若干主流的 Linux 发行版。详情可以参考拓展阅读：<a href="supplement.md#wsl">适用于 Linux 的 Windows 子系统</a>。</p>
+<h3 id="start-vm">启动虚拟机<a class="headerlink" href="#start-vm" title="Permanent link">&para;</a></h3>
+<p>若已经安装了上述虚拟机管理软件，则可以直接双击打开虚拟机镜像，管理软件会打开并导入该镜像，导入完毕后可直接点击开始按钮启动。</p>
+<p><img alt="" src="images/VWP-Xubuntu-32bit-Login.png" /></p>
+<p class="caption">VMware Workstation 成功启动 Xubuntu 32 位虚拟机</p>
+
+<p>如果读者采用了上面列出的虚拟机之一，其默认登录密码为 <code>ustc</code>，输入密码即可登录虚拟机系统桌面。</p>
+<p><img alt="" src="images/VWP-Xubuntu-32bit-Desktop.png" /></p>
+<p class="caption">Xubuntu 32 位虚拟机桌面</p>
+
+<h2 id="lug-ustc">中科大开源社群：LUG@USTC<a class="headerlink" href="#lug-ustc" title="Permanent link">&para;</a></h2>
+<p>LUG@USTC 是中国科学技术大学主流的开源社群，也是校内最大的技术性社团。其现今拥有数百名热爱开源文化的成员，并受益于他们而正在蓬勃发展。LUG@USTC 维护了中国最大的开源镜像之一 <a href="https://mirrors.ustc.edu.cn/">USTC Mirrors</a>，其作为本土的软件源为国内许多开源软件用户提供了镜像服务，是本社群对社会作出的一项重要贡献。</p>
+<p><img alt="" src="images/LUG@USTC-Logo.png" /></p>
+<p class="caption">LUG@USTC 图标</p>
+
+<h3 id="join-lug-ustc">了解与加入 LUG@USTC<a class="headerlink" href="#join-lug-ustc" title="Permanent link">&para;</a></h3>
+<p>你可以从 <a href="https://lug.ustc.edu.cn/wiki/">LUG@USTC 官方网站</a>中了解我们。官方网站中包括了我们在校内开展的各类流行活动和面向校内外提供的诸多网络服务。</p>
+<p>LUG@USTC 欢迎校内外的朋友加入社群交流。如果你是中国科学技术大学在读学生，你可以通过致邮 lug AT ustc.edu.cn 附上姓名与学号申请加入本社群；如果你是校外人士，也可以致邮获取进一步的沟通交流方式。</p>
+<h2 id="questions">思考题<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
+<div class="admonition question">
+<p class="admonition-title">计算机性能的增长</p>
+<p>计算机的性能在过去几十年内一直呈现指数级增长，而如今其增速却已经放缓，转而开始偏向多核。在指数增长时代，计算机实际上经历过了几个不同的阶段，每个阶段都是通过不同的因素让计算机的性能快速增长。自行动手在线查阅资料，思考如下问题：</p>
+<p>(1) 指数增长时代经历了哪几个阶段？每个阶段让计算机性能大幅提升的机制都是什么？</p>
+<p>(2) 导致指数增长时代的终结的因素有哪些？</p>
+<p>(3) 在多核时代，为了充分利用硬件性能，操作系统需要支持什么样的新特性？</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">免费软件和自由软件</p>
+<p>在英文里，“免费软件”和“自由软件”都叫做“free software”，看起来很一致。事实上免费的软件是否一定自由？自由的软件是否也一定免费？</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">著作传</p>
+<p>著作传（英文：copyleft）源于自由软件运动，是一种利用现有著作权的法律体制巧妙地保证用户自由使用软件的权利的许可方式。著作传一般包含哪些规则？它和常见的著作权有什么区别？它和完全放弃权利的“公有领域”又有什么不同？</p>
+<p><img alt="" src="images/Copyleft.png" />
+<p class="caption">著作传的标志，注意到它与常见的著作权标志左右颠倒</p></p>
+</div>
+<h2 class="no-underline" id="references">引用来源<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://101.lug.ustc.edu.cn/">中科大Linux讲义</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Ch04/program_trick/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 编程技巧" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              编程技巧
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="news_project/background/" class="md-footer__link md-footer__link--next" aria-label="下一页: 3-1 项目背景介绍" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              3-1 项目背景介绍
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Brought to you by <a href="https://goujianing.ml/">Gravpher</a>. Available freely under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 license</a>.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://goujianing.ml/" target="_blank" rel="noopener" title="goujianing.ml" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.543 7.25h2.733c.144-2.074.866-3.756 1.58-4.948.12-.197.237-.381.353-.552a6.506 6.506 0 0 0-4.666 5.5zm2.733 1.5H1.543a6.506 6.506 0 0 0 4.666 5.5 11.13 11.13 0 0 1-.352-.552c-.715-1.192-1.437-2.874-1.581-4.948zm1.504 0h4.44a9.637 9.637 0 0 1-1.363 4.177c-.306.51-.612.919-.857 1.215a9.978 9.978 0 0 1-.857-1.215A9.637 9.637 0 0 1 5.78 8.75zm4.44-1.5H5.78a9.637 9.637 0 0 1 1.363-4.177c.306-.51.612-.919.857-1.215.245.296.55.705.857 1.215A9.638 9.638 0 0 1 10.22 7.25zm1.504 1.5c-.144 2.074-.866 3.756-1.58 4.948-.12.197-.237.381-.353.552a6.506 6.506 0 0 0 4.666-5.5h-2.733zm2.733-1.5h-2.733c-.144-2.074-.866-3.756-1.58-4.948a11.738 11.738 0 0 0-.353-.552 6.506 6.506 0 0 1 4.666 5.5zM8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.2b46852b.min.js"></script>
+      
+        <script src="../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
