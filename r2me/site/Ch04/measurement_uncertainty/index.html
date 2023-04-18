@@ -1,0 +1,1243 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="通往计量工程师之路">
+      
+      
+        <meta name="author" content="Gravpher@163.com">
+      
+      
+        <link rel="canonical" href="https://r2me.goujianing.com/Ch04/measurement_uncertainty/">
+      
+      
+        <link rel="prev" href="../measurement_error/">
+      
+      
+        <link rel="next" href="../measurement_results/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13">
+    
+    
+      
+        <title>3 测量不确定度评定 - The Road to Metrology Engineer</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ffa9267a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../css/katex.css">
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="The Road to Metrology Engineer" class="md-header__button md-logo" aria-label="The Road to Metrology Engineer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Road to Metrology Engineer
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3 测量不确定度评定
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换至深色模式"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="切换至浅色模式"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/George-Gou/r2me" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    George-Gou/r2me
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="The Road to Metrology Engineer" class="md-nav__button md-logo" aria-label="The Road to Metrology Engineer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg>
+
+    </a>
+    The Road to Metrology Engineer
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/George-Gou/r2me" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    George-Gou/r2me
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        前言
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          I 什么是计量？
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          I 什么是计量？
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch01/" class="md-nav__link">
+        1 概述
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch01/Application_of_metrology/" class="md-nav__link">
+        2 为什么学习计量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch01/How_to_learn_metrology/" class="md-nav__link">
+        3 如何学习计量
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          II 计量开展的依据
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          II 计量开展的依据
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch02/" class="md-nav__link">
+        1 概述
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch02/Law_of_metrology/" class="md-nav__link">
+        2 计量法律
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch02/Metrology_specification/" class="md-nav__link">
+        3 计量技术规范
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch02/Problem/" class="md-nav__link">
+        4 问题
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          III 计量基础知识
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          III 计量基础知识
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch03/" class="md-nav__link">
+        1 概述
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch03/Basic_of_metrology/" class="md-nav__link">
+        2 计量与测量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch03/Measurement_standard/" class="md-nav__link">
+        3 测量标准
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          IV 测量数据处理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          IV 测量数据处理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        1 概述
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../measurement_error/" class="md-nav__link">
+        2 测量误差
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          3 测量不确定度评定
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        3 测量不确定度评定
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    什么是测量不确定度？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    基础知识
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gum" class="md-nav__link">
+    用GUM法评定测量不确定度
+  </a>
+  
+    <nav class="md-nav" aria-label="用GUM法评定测量不确定度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    分析测量不确定度的来源
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    建立测量方程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    输入量的标准不确定度评定
+  </a>
+  
+    <nav class="md-nav" aria-label="输入量的标准不确定度评定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    A类不确定度评定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    B类不确定度评定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    合成标准不确定度计算
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    输入量相关的处理方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    有效自由度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    扩展不确定度
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    蒙特卡洛法评定测量不确定度
+  </a>
+  
+    <nav class="md-nav" aria-label="蒙特卡洛法评定测量不确定度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcm" class="md-nav__link">
+    MCM 评定不确定度具体步骤
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gum-mcm" class="md-nav__link">
+    GUM 和 MCM 法的比较
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    引用来源
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../measurement_results/" class="md-nav__link">
+        4 测量结果报告
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          V 计量工作实务
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          V 计量工作实务
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch05/" class="md-nav__link">
+        1 概述
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch05/verification_calibration/" class="md-nav__link">
+        2 检定、校准的实施
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch05/standard_creation/" class="md-nav__link">
+        3 计量标准建立
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch05/metrology_comparison/" class="md-nav__link">
+        4 计量比对
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch05/period_checking/" class="md-nav__link">
+        5 期间核查
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch05/type_review/" class="md-nav__link">
+        6 型式评价
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    什么是测量不确定度？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    基础知识
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gum" class="md-nav__link">
+    用GUM法评定测量不确定度
+  </a>
+  
+    <nav class="md-nav" aria-label="用GUM法评定测量不确定度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    分析测量不确定度的来源
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    建立测量方程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    输入量的标准不确定度评定
+  </a>
+  
+    <nav class="md-nav" aria-label="输入量的标准不确定度评定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    A类不确定度评定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    B类不确定度评定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    合成标准不确定度计算
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    输入量相关的处理方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    有效自由度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    扩展不确定度
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    蒙特卡洛法评定测量不确定度
+  </a>
+  
+    <nav class="md-nav" aria-label="蒙特卡洛法评定测量不确定度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcm" class="md-nav__link">
+    MCM 评定不确定度具体步骤
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gum-mcm" class="md-nav__link">
+    GUM 和 MCM 法的比较
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    引用来源
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">导言</p>
+<p>本章主要介绍计量工作中最重要的部分-测量不确定度评定。     </p>
+</div>
+<h2 id="_2">什么是测量不确定度？<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>任何测量都不是完美的，无法测出真值，只能说高标准的计量器具其测量的不确定度更小，其测量结果的复现性也就最好。因此，我们需要对测量结果进行不确定度评价。</p>
+<h2 id="_3">基础知识<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>本节罗列评价测量不确定度需要的一些概率论知识。</p>
+<h2 id="gum">用GUM法评定测量不确定度<a class="headerlink" href="#gum" title="Permanent link">&para;</a></h2>
+<p>GUM法是评定测量不确定度的经典方法。其主要步骤主要有7个：  </p>
+<p>1、明确被测量，必要时给出被测量的定义；  </p>
+<p>2、分析不确定度来源并写出测量模型；  </p>
+<p>3、评定测量模型中各输入量的标准不确定度$u(x_i)$，计算灵敏系数$c_i$，从而给出与各输入量相对应的输出量y的不确定度分量$u_c(y)=|c_i|u(x_i)$;  </p>
+<p>4、计算合成标准不确定度$u_c(y)$，注意各输入量之间有没有之间相关性，必要时考虑高阶项；  </p>
+<p>5、列出不确定度分量的汇总表，尽量给出每个不确定度分量的详细信息；  </p>
+<p>6、对被测量的概率分布进行估计，并根据概率分布和所要包含的概率确定包含因子 $k$，无法确定被测量y的概率分布时，一般取k=2；  </p>
+<p>7、由合成标准不确定度$u_c(y)$和包含因子，计算扩展不确定度$U_p$；  </p>
+<h3 id="_4">分析测量不确定度的来源<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>对引起被测量不确定的来源需要由工程师逐一分析，包括测量仪器、测量环境、测量方法等方面都会产生测量不确定度。  实际操作中可以从以下几个方面来考虑：  </p>
+<p>（1）测量仪器计量性能带来的不确定度：测量仪器的示值误差、分辨力等计量性能会对被测量产生影响，这需要着重考虑；  </p>
+<p>（2）测量标准的不确定度；检定或校准用到的高一级的计量标准，这也是有不确定度的；  </p>
+<p>（3）测量重复性：多次测量得到的一系列分散的数据，这是诸多随机误差造成的；  </p>
+<p>（4）测量环境：如温度、湿度对长度测量有较大影响，其带来的不确定度需要考虑；  </p>
+<p>（5）被测量的定义不完整：对被测量的定义需准确、无歧义，例如不同温度、压力得到的测量结果是不一致的，定义要给出在什么环境下、什么姿态下进行测量；  </p>
+<p>（6）复现被测量的测量方法不理想：可能存在这种情况，例如微波测量中“衰减”量实在匹配条件下定义的，但实际测量系统不可能理想匹配，这会带来不确定度；  </p>
+<p>（7）取样代表性不够；选取那一块区域进行测量可能得到的结果不一致。  </p>
+<h3 id="_5">建立测量方程<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>分析出来各不确定来源之后，可以将其作为输入量$X_1,X_2,...,X_n$，探讨其对被测量$Y$的影响。  </p>
+<p>用$f$表示测量函数，有$$Y=f(X_1,X_2...,X_n)$$设$y$为$Y$的估计值，各输入量的估计值为$x_i$，则有$$y=f(x_1,x_2,...x_n)$$输入量可以是直接测量的量，可以是之前测量的量，也可以来自手册或其他资料。</p>
+<h3 id="_6">输入量的标准不确定度评定<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>标准不确定度评定分为 A 类和 B 类，A 类主要是利用实验数据的标准偏差来获取的，B 类评定则是利用一切有关资料进行科学判断，从而估计到的标准偏差，资料可能来源于校准证书、论文、说明书等。</p>
+<h4 id="a">A类不确定度评定<a class="headerlink" href="#a" title="Permanent link">&para;</a></h4>
+<p>对于被测量 X，在同一条件下进行 b 次独立重复观测，观测值为$x_1,x_2,...x_n$，得到其算术平均值$\bar x$与实验标准偏差$s(x)$，当用算术平均值$\bar x$作为最佳估计值后，被测量估计值的重复性引入的标准不确定度$u(\bar x)$为：$$u(\bar x) = s(\bar x)=\frac{s(x)}{\sqrt(n)}$$。   </p>
+<p>有没有可能我们做的一次重复性实验不具备代表性呢？需要核查吗？你觉得有必要就可以进行核查，假设我们核查了 m 次，则此时我们可以对 $s(x)$做一个重复性，于是有$$x_p=(sqrt(\sum_{1}^{m}s^2_j/m))$$，则标准不确定度$$u = s_p / \sqrt(n')$$ $n'$为获得平均值时的测量次数（实测情况下，上述m次是做核查实验）。</p>
+<div class="admonition note">
+<p class="admonition-title">规范化的常规测量？</p>
+<p>如果我们测量 m 个同类被测量，得到 m 组数据，每组测量 n 次，此时合并样本标准偏差$x_p$为$$s_p = \sqrt{\frac{\sum_{j=1}^{m}\sum_{i=1}^{n}(x_{ij}-\bar{x_j})}{m(n-1)}}$$其中 $x_j$为第 j 组的平均值，每个被测件最佳估计值$x_j$的标准不确定度为$$u(\bar{x_j}) = s_p/\sqrt(n)$$</p>
+</div>
+<h4 id="b">B类不确定度评定<a class="headerlink" href="#b" title="Permanent link">&para;</a></h4>
+<p>B 类不确定评定的主要步骤：<br />
+1、根据有关信息和经验，得到被测量值的可能区间$[\bar{x}-a, \bar{x} + a]$；  </p>
+<p>2、假设被测量在区间内的概率分布；  </p>
+<p>3、根据概率分布和要求的包含概率估计包含因子 k，则 B 类评定的标准不确定度 u 为：$$u=\frac{a}{k}$$其中a为被测量可能值区间的半宽度；k为包含因子；</p>
+<p>a 的数据可能来源于说明书、校准证书、论文等渠道。被测量的概率分布模型如何确定呢？一般情况下，被测量的可能值落在区间外的概率几乎为 0 ，则当其值落在区间内的概率相同时，可设为<strong>均匀分布</strong>。如果其落在中间的可能性更大，可设为<strong>三角分布</strong>，如果其落在上下限处的可能性最大，那么可设为<strong>反正弦函数</strong>，如果对其分布情况缺乏了解时，设为均匀分布。实际工作中可参考历史经验来确定概率模型，如量块中心长度偏差导致的概率分布为<strong>两点分布</strong>。  </p>
+<p>k 值如何确定呢，其一可以根据扩展不确定度除以标准不确定度来得到，二是查概率分布的表得到。如正态分布 95% 为 k = 2，99% 为 k = 2.58。</p>
+<h4 id="_7">合成标准不确定度计算<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>求出个各输入量的标准不确定度后，我们要用不确定度传播率将输入量的影响传递到输出量Y上。$$u_c(y) = \sqrt{\sum_{i=1}^N(\frac{\partial f}{\partial x_i})^2 u^2(x_i) + 2\sum_{i=1}^{N-1} \sum_{j=i+1}^{N} \frac{\partial f}{\partial x_i} \frac{\partial f}{\partial x_j} r(x_i,x_j) u(x_i)u(x_j)}$$</p>
+<p>$\frac{\partial f}{\partial x_i}$为输入量$x_i$的灵敏度，$r(x_i,x_j) u(x_i)u(x_j)$为两个输入量的协方差。</p>
+<div class="admonition note">
+<p class="admonition-title">灵敏系数</p>
+<p>灵敏系数其实就是测量函数 $f$，在$X_i = x$处的偏导数，是一个有符号有量值的量，它表明了输入量$x_i$的不确定度$u(x_i)$对输出量 $u_c(y)$ 的灵敏程度。</p>
+</div>
+<p>当各输入量不相关时，可以简化为$$u_c(y) = \sqrt{\sum_{i=1}^N(\frac{\partial f}{\partial x_i})^2 u^2(x_i)}$$</p>
+<h3 id="_8">输入量相关的处理方法<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>1、一般来说，对于独立测量，不同的量之间测量结果可以忽略相关性；不同实验室、不同时间、不同设备测量同一个量，也可以假设相关性为零；当$x_i,x_j$中任意一个量可以当作常数处理事，就可以忽略。  </p>
+<p>2、不能忽略的话，可以估计一下<strong>协方差参考值</strong>；对两个输入量$X_i,X_j$同时进行重复观测，设$x_{ik},x_{jk}$分别是输入量$X_i,x_j$的观测值。$k$为测量序号，$\bar{x_i},\bar{x_j}$分别是第$i$和第$j$个输入量的n次测量的算术平均值；则可用下式对协方差值进行估计：$$u(x_i,x_j)=\frac{1}{n-1}\sum_{k=1}^{n}(x_{ik}-\bar{x_i}(x_{ij}-\bar{x_j}))$$当协方差足够小时（其绝对值远远小于输入量标准偏差的乘积，则可以认为这两个输入量无关）。  </p>
+<p>注意，如果是平均值的话，还要除以一个 n ，即$$u(x_i,x_j)=\frac{1}{n(n-1)}\sum_{k=1}^{n}(x_{ik}-\bar{x_i}(x_{ij}-\bar{x_j}))$$</p>
+<p>3、<strong>关于相关系数的计算</strong>：$$r(x,y)  = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}{(n-1)s(x)x(y)}$$也可以用经验公式估计相关系数：$$r(x_i,x_j)<em>\approx</em>\frac{u(x_i)\delta_j}{x(x_j)\delta_i}$$，其中$\delta$表示输入量的变化量。 </p>
+<p>4、想办法消除相关性：（1）变换输入量，让两者不具有相关性，比如用高等别量块校准低等别量块的时候，两个量块的温度具有一定相关性，将标准量块的温度$\delta_s$和两者之差$\delta$作为输入量则两者相关性就显著减小了；（2）如果输入量都与同一个变量有关系，比如$f(x_i,x_j)$中的$x_i,x_j$都与温度有关系，则可以将温度T也加入测量模型$f(x_i,x_j,T)$，这样两者就没有相关性了，但都与T有相关性；  </p>
+<h3 id="_9">有效自由度<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>什么是自由度？自由度是指计算某一统计量时，取值不受限制的变量个数，通常为方程个数减去未知数个数。一般来说自由度越高，得到的未知数解越准确。  </p>
+<p>有效自由度的计算公式为：$$v_{eff} = \frac{u_c^4(y)}{\sum_{i=1}^{N}\frac{u_i^4(y)}{v_i}}$$当然，也可以方便地推出相对标准不确定度度的有效自由度表达式：$$v_{eff} = \frac{u_c^4(y)/y}{\sum_{i=1}^{N}\frac{[P_iu(x_i)/x_i]^4}{v_i}}$$此时的测量模型为$$Y=AX_1^{P1}X_2^{P2}X_3^{P3}...X_N^{P_N}$$标准不确定度的自由度为$v_i$，其可以通过公式$$v_i \approx \frac{1}{2}\ \frac{\Delta u(x_i)}{u(x_i)}$$来估计其自由度。</p>
+<h3 id="_10">扩展不确定度<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>扩展不确定度是在合成标准不确定度的基础上再扩展，此举放大了不确定度，也是对测量结果的保守估计。$$U=ku_c$$一般来说选取k=2或者3，k=2时包含概率大约为 95%，k=3时包含概率大约为 99%，即测量值包含在$[y-U \leq Y \leq y+U]$, y是被测量Y的最佳估计值。给出扩展不确定度的同时，一定要给出k值。</p>
+<p>第二种情况：<strong>明确规定包含概率$p$</strong>，这时候就要定量求出$k_p$，$$U = k_pu_c$$。那怎么计算$k_p$呢？一般来说当输出满足小样本的正态分布（t分布）时，可以取$$k_p=t_p(v_{eff})$$，根据其有效自由度，查表可以得到$k_p$。</p>
+<div class="admonition note">
+<p class="admonition-title">不确定度表达上要注意的点</p>
+<p>1、无论如何，扩展不确定度一定要注明 k 等于多少<br />
+  2、不确定度不需要 +-号  </p>
+</div>
+<h2 id="_11">蒙特卡洛法评定测量不确定度<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>传统的 GUM 法是根据输入量的标准不确定来合成输出量的标准不确定度的，这是基于测量模型基本线性的基础上，当测量模型非线性的时候，需要考虑对其进行展开来达到线性化的效果。  </p>
+<p>蒙特卡洛（Monte-Carlo Method，MCM）的核心思想是不管多复杂的测量模型，我只需要知道输入量的概率密度函数，来随机生成一个样本空间，经过测量模型，来得到一系列的输出值，最终由多个输出值的概率分布，得到输出量的最佳估计值、标准不确定度和包含区间。  </p>
+<p>MCM方法主要分为四个步骤：1）MCM输入：写出测量模型，给出输入量的概率分布（PDF）；2）MCM传播：根据随机抽样出的样本值，计算响应的模型值；3）MCM输出：根据模型输出值，得到输出量Y的分布函数</p>
+<h3 id="mcm">MCM 评定不确定度具体步骤<a class="headerlink" href="#mcm" title="Permanent link">&para;</a></h3>
+<p>1）建立测量模型  </p>
+<p>和 GUM 方法一样，先根据测量原理建立测量模型 。</p>
+<p>2）对每个输入量设定 PDF  </p>
+<p>根据经验、说明书、测量结果设定每个输入量的分布，可以是均匀分布、高斯分布、矩形分布等等。  </p>
+<p>3）选定蒙特卡洛试验数  </p>
+<p>合理选择样本量的大小，一般来说越大结果越准确，但也增加了计算量。于是我们一般选取 $M=10^6$，会为输出量提供超 95% 的包含区间。无法保证 M 个数是否够，可以使用自适应的MCM方法，即依次增大 M 的量级，来根据结果判断。  </p>
+<p>4）输入量概率分布的抽样即模型值计算  </p>
+<p>根据各输入量的 PDF 抽样出一批值来，根据测量模型，得到输出量的模型值。  </p>
+<p>5）输出量分布函数的离散表示  </p>
+<p>再得到一系列的输出值后，对该量值进行排序，再划定直方图，得到每个区间的概率分布，这样就离散化地表示了输出量的PDF。  </p>
+<p>6）得到结果  </p>
+<p>即输出量的估计值、标准不确定度及包含区间。  </p>
+<p>模型估计值为样本值的算术平均值，即$$\bar y = \frac{1}{M}]\sum_{r=1}^{M}y_r$$</p>
+<p>被测量估计值 y 的标准不确定度u(y)为算术平均值$\bar y$的标准偏差$u(\bar y)$可有下式计算：  $$u(\bar{y})=\sqrt{\frac{1}{M-1}\sum_{r=1}^{M}(y_r-\bar y)^2}$$</p>
+<p>对于输出量的包含区间可以用 <strong>包含概率与实验数M的乘积 pM来表示</strong>。</p>
+<h2 id="gum-mcm">GUM 和 MCM 法的比较<a class="headerlink" href="#gum-mcm" title="Permanent link">&para;</a></h2>
+<p>通过前面的介绍大家应该有这样一种感觉，GUM 法是通过<strong>不确定度传播率</strong>来确定输出量的合成标准不确定度的，即计算输出量相对每个输入量的偏导数得到灵敏系数，再对每一分量进行求和累加再开根号的结果。而 MCM 方法是通过<strong>概率分布来传播</strong>的，并在次基础上给出被测量的估计值、标准不确定度和包含区间。  </p>
+<p>两种方法孰优孰劣，这在不同的应用场景中有所不同。比如说当测量模型简单、呈线性、输入量的分布呈对称分布、输出量的分布为正态分布。而 MCM 适用于非线性模型，即灵敏系数的求取非常复杂的情况，且输出量呈现明显的<strong>非对称分布</strong>。  </p>
+<p>相较而言 MCM 法更加具有普适性，因此可以用 MCM 法对 GUM 法评定的结果进行检验。  </p>
+<p>假设应用 GUM 法得到输出量的包含概率为p 的包含区间为 $y \pm U_p$；运用 MCM 获得输出量的标准不确定度$u(y)$和概率为 p 的对称包含区间端点值为$y_{low}、y_{high}$。  </p>
+<p>数值容差$\delta$ 为不确定度有效位数最后一位数字的一半，如果$$d_{low} = |(y-U_p)-y_{low}|,且d_{high}=|(y+U_p)-y_{high}|$$当$d_{low}$和$d_{high}$都小于$\delta$时认为 GUM 法适用于该测量的不确定度评定。  </p>
+<h2 class="no-underline" id="references">引用来源<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<div id="refer-anchor"></div>
+<p>[1]《一级注册计量师基础知识及专业实务》  </p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Brought to you by <a href="https://goujianing.ml/">Gravpher</a>. Available freely under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 license</a>.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://goujianing.ml/" target="_blank" rel="noopener" title="goujianing.ml" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM5.78 8.75a9.64 9.64 0 0 0 1.363 4.177c.255.426.542.832.857 1.215.245-.296.551-.705.857-1.215A9.64 9.64 0 0 0 10.22 8.75Zm4.44-1.5a9.64 9.64 0 0 0-1.363-4.177c-.307-.51-.612-.919-.857-1.215a9.927 9.927 0 0 0-.857 1.215A9.64 9.64 0 0 0 5.78 7.25Zm-5.944 1.5H1.543a6.507 6.507 0 0 0 4.666 5.5c-.123-.181-.24-.365-.352-.552-.715-1.192-1.437-2.874-1.581-4.948Zm-2.733-1.5h2.733c.144-2.074.866-3.756 1.58-4.948.12-.197.237-.381.353-.552a6.507 6.507 0 0 0-4.666 5.5Zm10.181 1.5c-.144 2.074-.866 3.756-1.58 4.948-.12.197-.237.381-.353.552a6.507 6.507 0 0 0 4.666-5.5Zm2.733-1.5a6.507 6.507 0 0 0-4.666-5.5c.123.181.24.365.353.552.714 1.192 1.436 2.874 1.58 4.948Z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      
+        <script src="../../js/print-site.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
