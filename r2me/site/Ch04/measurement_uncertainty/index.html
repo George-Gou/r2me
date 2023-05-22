@@ -423,7 +423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch02/Problem/" class="md-nav__link">
+      <a href="../../Ch02/Problem.md" class="md-nav__link">
         4 问题
       </a>
     </li>
@@ -736,6 +736,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    常用的误差来源评定方法
+  </a>
+  
+    <nav class="md-nav" aria-label="常用的误差来源评定方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    分辨力
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    如何判断误差属于什么分布
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     引用来源
   </a>
@@ -878,6 +905,97 @@
     <li class="md-nav__item">
       <a href="../../Ch05/type_review/" class="md-nav__link">
         6 型式评价
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          VI 典型参考题目
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          VI 典型参考题目
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch06/" class="md-nav__link">
+        1 概述
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch06/Problem_law/" class="md-nav__link">
+        2 计量法律法规
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch06/Problem_dataPro/" class="md-nav__link">
+        3 测量数据处理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch06/Problem_case/" class="md-nav__link">
+        4 计量专业实务
       </a>
     </li>
   
@@ -1040,6 +1158,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    常用的误差来源评定方法
+  </a>
+  
+    <nav class="md-nav" aria-label="常用的误差来源评定方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    分辨力
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    如何判断误差属于什么分布
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     引用来源
   </a>
@@ -1070,9 +1215,41 @@
 <p>本章主要介绍计量工作中最重要的部分-测量不确定度评定。     </p>
 </div>
 <h2 id="_2">什么是测量不确定度？<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>任何测量都不是完美的，无法测出真值，只能说高标准的计量器具其测量的不确定度更小，其测量结果的复现性也就最好。因此，我们需要对测量结果进行不确定度评价。</p>
+<p>任何测量都不是完美的，无法测出真值，只能说高标准的计量器具其测量的不确定度更小，其测量结果的复现性也就最好。因此，我们需要对测量结果进行不确定度评价。  </p>
+<p>说白了，测量不确定度评价就是告诉别人，我们此次测量结果的分散性，即测量结果大概的分布情况，一般可以用标准偏差来表示。</p>
 <h2 id="_3">基础知识<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>本节罗列评价测量不确定度需要的一些概率论知识。</p>
+<p>本节罗列评价测量不确定度需要的一些概率论知识。这里需要掌握几个常见概率分布的标准偏差。</p>
+<table>
+<thead>
+<tr>
+<th align="center">概率分布</th>
+<th align="center">标准偏差$\sigma$</th>
+<th align="center">包含因子k(p=100%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">均匀</td>
+<td align="center">$a/\sqrt{3}$</td>
+<td align="center">$\sqrt{3}$</td>
+</tr>
+<tr>
+<td align="center">三角</td>
+<td align="center">$a/\sqrt{6}$</td>
+<td align="center">$\sqrt{6}$</td>
+</tr>
+<tr>
+<td align="center">梯形</td>
+<td align="center">$a\sqrt{1+\beta^2}/\sqrt{6}$</td>
+<td align="center">$\sqrt{6}/\sqrt{1+\beta^2}$</td>
+</tr>
+<tr>
+<td align="center">反正弦</td>
+<td align="center">$a/\sqrt{2}$</td>
+<td align="center">$\sqrt{2}$</td>
+</tr>
+</tbody>
+</table>
 <h2 id="gum">用GUM法评定测量不确定度<a class="headerlink" href="#gum" title="Permanent link">&para;</a></h2>
 <p>GUM法是评定测量不确定度的经典方法。其主要步骤主要有7个：  </p>
 <p>1、明确被测量，必要时给出被测量的定义；  </p>
@@ -1161,6 +1338,15 @@
 <p>相较而言 MCM 法更加具有普适性，因此可以用 MCM 法对 GUM 法评定的结果进行检验。  </p>
 <p>假设应用 GUM 法得到输出量的包含概率为p 的包含区间为 $y \pm U_p$；运用 MCM 获得输出量的标准不确定度$u(y)$和概率为 p 的对称包含区间端点值为$y_{low}、y_{high}$。  </p>
 <p>数值容差$\delta$ 为不确定度有效位数最后一位数字的一半，如果$$d_{low} = |(y-U_p)-y_{low}|,且d_{high}=|(y+U_p)-y_{high}|$$当$d_{low}$和$d_{high}$都小于$\delta$时认为 GUM 法适用于该测量的不确定度评定。  </p>
+<h2 id="_12">常用的误差来源评定方法<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h3 id="_13">分辨力<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>如果数字显示仪器的分辨力为$\delta_x$，则区间半宽度为$a=\delta_x/2$，则可设为均匀分布，查表$k=\sqrt{3}$，则由分辨力引入的标准不确定度分量：$$u(x)=\frac{a}{k}$$</p>
+<h2 id="_14">如何判断误差属于什么分布<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<p>根据 JJF 1059.1-2012《测量不确定度评定与表示》 的4.3.3.4：  </p>
+<p>1、由数据修约、测量仪器最大允许误差或分辨力、参考数据的误差限、度盘或齿轮的回差、平衡指示器调零不准、测量仪器的滞后或摩擦效应导致的不确定度，通常假设为<strong>均匀分布</strong>；</p>
+<p>2、两相同均匀分布的合成、两个独立量之和或差值服从<strong>三角分布</strong>，如果是两个不同大小的均匀分布合成，则可假设为<strong>梯形分布</strong>；  </p>
+<p>3、度盘偏心引入的测角不确定度、正弦振动引入的位移不确定度、无线电测量中失配引入的不确定度、随时间正弦或余弦变化的温度不确定度，一般假设为反正弦分布( 即 <strong>U 型分布</strong>)；  </p>
+<p>4、按级使用量块（除 00 级以外），中心长度偏差的概率分布可假设为<strong>两点分布</strong>。</p>
 <h2 class="no-underline" id="references">引用来源<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <div id="refer-anchor"></div>
 <p>[1]《一级注册计量师基础知识及专业实务》  </p>

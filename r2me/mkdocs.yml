@@ -159,5 +159,10 @@ nav:
       - 3 计量标准建立: Ch05/standard_creation.md
       - 4 计量比对: Ch05/metrology_comparison.md 
       - 5 期间核查: Ch05/period_checking.md  
-      - 6 型式评价: Ch05/type_review.md          
+      - 6 型式评价: Ch05/type_review.md     
+  - VI 典型参考题目:
+      - 1 概述: Ch06/index.md 
+      - 2 计量法律法规: Ch06/Problem_law.md
+      - 3 测量数据处理: Ch06/Problem_dataPro.md
+      - 4 计量专业实务: Ch06/Problem_case.md 
       
