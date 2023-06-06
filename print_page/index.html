@@ -1688,7 +1688,7 @@
 <p>（3）乘修正因子；即原始测量值的基础上乘以修正因子，就好像全站仪的乘常数一样；</p>
 <h4 id="ch04-measurement_error-_5">减小系统误差的方法<a class="headerlink" href="#ch04-measurement_error-_5" title="Permanent link">&para;</a></h4>
 <p>（1）实验过程中尽量减少系统误差的引入：如仪器该整平的未整平，该对中的未对中等等；<br />
-（2）使用某种测量方法来消除系统误差：其主要分为两种，一种是恒定系统误差，一种是可变系统误差。对于恒定系统，主要有异号法、交换法、替代法。</p>
+（2）使用某种测量方法来消除系统误差：其主要分为两种，一种是恒定系统误差，一种是可变系统误差。对于<strong>恒定系统</strong>，主要有异号法、交换法、替代法。</p>
 <div class="admonition note">
 <p class="admonition-title">异号法</p>
 <p>即改变测量中的某些条件，如测量方向、电流方向等，两种条件下测量值的误差符号相反，取其平均值，就可以消除系统误差。<br />
@@ -1703,11 +1703,7 @@
 <p class="admonition-title">替代法</p>
 <p>保持测量条件不变，用已知量值的标准器去参与测量，将其示值不变，则标准器的值就等于被测量值。</p>
 </div>
-<p>（3）可变系统误差消除法；一般采用对称测量，或半周期偶数测量法来消除周期系统误差；</p>
-<div class="admonition note">
-<p class="admonition-title">对称测量法</p>
-<p>对于存在零点漂移的仪器就可以用这种方法消除漂移带来的测量系统误差。如重力仪在测量两个点的重力段差值时，如果我们在短时间内两次测量两个点的段差，可以假设漂移在短时间内线性变化，则可通过求段自差消除漂移系统误差。</p>
-</div>
+<p>（3）<strong>可变系统</strong>误差消除法；一般采用对称测量，或半周期偶数测量法来消除周期系统误差；</p>
 <div class="admonition note">
 <p class="admonition-title">对称测量法</p>
 <p>对于存在零点漂移的仪器就可以用这种方法消除漂移带来的测量系统误差。如重力仪在测量两个点的重力段差值时，如果我们在短时间内两次测量两个点的段差，可以假设漂移在短时间内线性变化，则可通过求段自差消除漂移系统误差。
@@ -1863,11 +1859,14 @@
 <p>1、一般来说，对于独立测量，不同的量之间测量结果可以忽略相关性；不同实验室、不同时间、不同设备测量同一个量，也可以假设相关性为零；当$x_i,x_j$中任意一个量可以当作常数处理事，就可以忽略。  </p>
 <p>2、不能忽略的话，可以估计一下<strong>协方差参考值</strong>；对两个输入量$X_i,X_j$同时进行重复观测，设$x_{ik},x_{jk}$分别是输入量$X_i,x_j$的观测值。$k$为测量序号，$\bar{x_i},\bar{x_j}$分别是第$i$和第$j$个输入量的n次测量的算术平均值；则可用下式对协方差值进行估计：$$u(x_i,x_j)=\frac{1}{n-1}\sum_{k=1}^{n}(x_{ik}-\bar{x_i}(x_{ij}-\bar{x_j}))$$当协方差足够小时（其绝对值远远小于输入量标准偏差的乘积，则可以认为这两个输入量无关）。  </p>
 <p>注意，如果是平均值的话，还要除以一个 n ，即$$u(x_i,x_j)=\frac{1}{n(n-1)}\sum_{k=1}^{n}(x_{ik}-\bar{x_i}(x_{ij}-\bar{x_j}))$$</p>
-<p>3、<strong>关于相关系数的计算</strong>：$$r(x,y)  = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}{(n-1)s(x)x(y)}$$也可以用经验公式估计相关系数：$r(x_i,x_j)<em>\approx</em>\frac{u(x_i)\delta_j}{x(x_j)\delta_i}$，其中$\delta$表示输入量的变化量。 </p>
-<p>4、想办法消除相关性：（1）变换输入量，让两者不具有相关性，比如用高等别量块校准低等别量块的时候，两个量块的温度具有一定相关性，将标准量块的温度$\delta_s$和两者之差$\delta$作为输入量则两者相关性就显著减小了；（2）如果输入量都与同一个变量有关系，比如$f(x_i,x_j)$中的$x_i,x_j$都与温度有关系，则可以将温度T也加入测量模型$f(x_i,x_j,T)$，这样两者就没有相关性了，但都与T有相关性；  </p>
+<p>3、<strong>关于相关系数的计算</strong>：$$r(x,y)  = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}{(n-1)s(x)x(y)}$$</p>
+<p>也可以用经验公式估计相关系数：$$r(x_i,x_j)<em>\approx</em>\frac{u(x_i)\delta_j}{x(x_j)\delta_i}$$，其中$\delta$表示输入量的变化量。 </p>
+<p>4、想办法消除相关性：（1）变换输入量，让两者不具有相关性，比如用高等别量块校准低等别量块的时候，两个量块的温度具有一定相关性，将标准量块的温度$\delta_s$和两者之差$\delta$作为输入量则两者相关性就显著减小了；  </p>
+<p>（2）如果输入量都与同一个变量有关系，比如$f(x_i,x_j)$中的$x_i,x_j$都与温度有关系，则可以将温度T也加入测量模型$f(x_i,x_j,T)$，这样两者就没有相关性了，但都与T有相关性；  </p>
 <h3 id="ch04-measurement_uncertainty-_9">有效自由度<a class="headerlink" href="#ch04-measurement_uncertainty-_9" title="Permanent link">&para;</a></h3>
 <p>什么是自由度？自由度是指计算某一统计量时，取值不受限制的变量个数，通常为方程个数减去未知数个数。一般来说自由度越高，得到的未知数解越准确。  </p>
-<p>有效自由度的计算公式为：$$v_{eff} = \frac{u_c^4(y)}{\sum_{i=1}^{N}\frac{u_i^4(y)}{v_i}}$$当然，也可以方便地推出相对标准不确定度度的有效自由度表达式：$$v_{eff} = \frac{u_c^4(y)/y}{\sum_{i=1}^{N}\frac{[P_iu(x_i)/x_i]^4}{v_i}}$$此时的测量模型为$$Y=AX_1^{P1}X_2^{P2}X_3^{P3}...X_N^{P_N}$$标准不确定度的自由度为$v_i$，其可以通过公式$$v_i \approx \frac{1}{2}\ \frac{\Delta u(x_i)}{u(x_i)}$$来估计其自由度。</p>
+<p>有效自由度的计算公式为：$$v_{eff} = \frac{u_c^4(y)}{\sum_{i=1}^{N}\frac{u_i^4(y)}{v_i}}$$当然，也可以方便地推出相对标准不确定度度的有效自由度表达式：$$v_{eff} = \frac{u_c^4(y)/y}{\sum_{i=1}^{N}\frac{[P_iu(x_i)/x_i]^4}{v_i}}$$此时的测量模型为$$Y=AX_1^{P1}X_2^{P2}X_3^{P3}...X_N^{P_N}$$标准不确定度的自由度为$v_i$，其可以通过公式$$v_i \approx \frac{1}{2}\ [\frac{\Delta u(x_i)}{u(x_i)}]^{-2}$$来估计其自由度。  </p>
+<p>$[\frac{\Delta u(x_i)}{u(x_i)}]$是标准不确定度的相对不确定度。如果为25%的话，则$v_i=\frac{1}{2}[0.25]^{-2}=8$</p>
 <h3 id="ch04-measurement_uncertainty-_10">扩展不确定度<a class="headerlink" href="#ch04-measurement_uncertainty-_10" title="Permanent link">&para;</a></h3>
 <p>扩展不确定度是在合成标准不确定度的基础上再扩展，此举放大了不确定度，也是对测量结果的保守估计。$$U=ku_c$$一般来说选取k=2或者3，k=2时包含概率大约为 95%，k=3时包含概率大约为 99%，即测量值包含在$[y-U \leq Y \leq y+U]$, y是被测量Y的最佳估计值。给出扩展不确定度的同时，一定要给出k值。</p>
 <p>第二种情况：<strong>明确规定包含概率$p$</strong>，这时候就要定量求出$k_p$，$$U = k_pu_c$$。那怎么计算$k_p$呢？一般来说当输出满足小样本的正态分布（t分布）时，可以取$$k_p=t_p(v_{eff})$$，根据其有效自由度，查表可以得到$k_p$。</p>
@@ -1923,7 +1922,7 @@
 <h2 id="ch04-measurement_results-_3">什么是有效数字<a class="headerlink" href="#ch04-measurement_results-_3" title="Permanent link">&para;</a></h2>
 <p>这个我们在小学二年级的时候就应该学过，就是从一个数中不为0的数开始数，数到最后一位有多少个数字都算有效数字，如0.0038是两位有效数字，3.0008,就是5位有效数字。 对于<strong>测量不确定度</strong>而言，我们一般保留1到2位小数，测量要求较高时采用<strong>2位小数</strong>。</p>
 <h2 id="ch04-measurement_results-_4">数字修约规则<a class="headerlink" href="#ch04-measurement_results-_4" title="Permanent link">&para;</a></h2>
-<p>数字修约主要有两类，一类是测量结果，一类是不确定度。我们都知道四舍五入的修约规则，这在计量中也同样适用。不过当末尾为5时，我们一般都采取进一的手段，但在计量中，<strong>如果末位为偶数时，这时候不进一，当末位为奇数的时候就可以进一</strong>。如10.5 nm，应该修约为 10 nm，如 11.5 nm，应该修约为 12 nm。还有，修约的时候一部到位，<strong>不要连续修约</strong>（从末位一个一个修约）。  </p>
+<p>数字修约主要有两类，一类是测量结果，一类是不确定度。我们都知道四舍五入的修约规则，这在计量中也同样适用。不过当末尾为5时，我们一般都采取进一的手段，但在计量中，<strong>如果末位为偶数时，这时候不进一，当末位为奇数的时候就可以进一</strong>。如10.5 nm，应该修约为 10 nm，如 11.5 nm，应该修约为 12 nm。还有，修约的时候一部到位，<strong>不要连续修约</strong>（从末位一个一个修约，把需要修约后面的数据看做一个整体）。    </p>
 <p>但是对于不确定度时候的修约就可以灵活一点，比如为了保守起见，把测量不确定度稍微评大一点，末位有 5 的话直接进一。还应该注意，<strong>测量结果要与不确定度的位数对齐</strong>。  如 $$m_s = 100.02147 \ g; u_c(m_s) = 0.35\ mg$$当然也可以用$$m_s=100.02147(35)\  g$$表示。</p>
 <div class="admonition question">
 <p class="admonition-title">什么时候用合成标准不确定度、什么时候用扩展标准不确定度？</p>
@@ -1931,7 +1930,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">常见的不确定度表达方式</p>
-<p>$$m_s = 100.02147\ g; U_{95} = 0.79 \ mg, v_{eff} = 9$$$$m_s = (100.02147\pm 0.00079)\ g,v_{eff} = 9$$    $$m_s = 100.02147(79)\ g; v_{eff} = 9$$$$m_s = 100.02147(0.00079)\ g,v_{eff} = 9$$   我们一般推荐第2种表达方式，这样更加简洁明了。</p>
+<p>对于$U_p$表示：  $$m_s = 100.02147\ g; U_{95} = 0.79 \ mg, v_{eff} = 9$$$$m_s = (100.02147\pm 0.00079)\ g,v_{eff} = 9$$    $$m_s = 100.02147(79)\ g; v_{eff} = 9$$$$m_s = 100.02147(0.00079)\ g,v_{eff} = 9$$   我们一般推荐第2种表达方式，这样更加简洁明了。对于用$U$表示，则可以用：$$m_s=(100.02147\pm0.00070) g,k=2$$$$m_s=100.02147 g; U=0.70 mg,k=2$$对于相对的表达形式：$$m_s=100.02147 g;U_{rel}=0.70\times10^{-6},k=2$$$$m_s=100.02147 g;U_{95rel}=0.79\times10^{-6},v_{eff}=9$$$$100.02147(1\pm0.79\times10^{-6}) g,p=95%,v_{eff}=9$$</p>
 </div>
 <h2 id="ch04-measurement_results-_5">其他注意事项<a class="headerlink" href="#ch04-measurement_results-_5" title="Permanent link">&para;</a></h2>
 <p>1、单独表示不确定度时，不要使用$\pm$号；  </p>
@@ -2014,6 +2013,9 @@
 <p>计量器具控制内容包括：首次检定、后续检定和使用中检查，检定条件，检定项目，检定方法，检定结果处理，检定周期。  </p>
 <h3 id="ch05-verification_calibration-_22">计量校准规范包含的内容<a class="headerlink" href="#ch05-verification_calibration-_22" title="Permanent link">&para;</a></h3>
 <p>封面、扉页、目录、引言、范围、~~引用文件~~、~~术语与计量单位~~、~~概述~~、计量特性、校准条件、校准项目和校准方法、校准结果表达、~~复校时间间隔~~、附录、~~附加说明~~。</p>
+<h3 id="ch05-verification_calibration-_23">检定与校准规范的内容对比<a class="headerlink" href="#ch05-verification_calibration-_23" title="Permanent link">&para;</a></h3>
+<p>必备的章节，两种计量规范都有10个。其中前5个与最后1个相同，分别为封面、扉页、目录、引言、范围、附录。  </p>
+<p>检定规程里面还有<strong>概述（必须项目、校准规范不是）</strong>、计量性能要求（校准规范里面校计量特性）、通用技术要求、计量器具控制；校准规范里面还有计量特性、校准条件、校准项目和校准方法、校准结果表达。</p>
 <h2 class="no-underline" id="ch05-verification_calibration-references">引用来源<a class="headerlink" href="#ch05-verification_calibration-references" title="Permanent link">&para;</a></h2>
 <div class="footnote">
 <hr />
@@ -2094,6 +2096,10 @@
 <p class="admonition-title">注意！<p>稳定性考核是测量计量标准的稳定性，而不是被测量仪器的稳定性，一定不要把主次搞反了。</p>
 </p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">稳定性考核的周期！<p>对于新建标准，每个一段时间（大于1个月）进行一次稳定性考核，对于已建标准，每年至少进行1次稳定性考核。</p>
+</p>
+</div>
 <h2 id="ch05-standard_creation-_16">不确定度有关问题<a class="headerlink" href="#ch05-standard_creation-_16" title="Permanent link">&para;</a></h2>
 <p>对于每个要考核的计量标准，都需要给出常规的被测对象的测量不确定度。特别的，对于<strong>多参数、多量程</strong>的计量标准，要分段给出各个条件下的典型测量不确定度。</p>
 <h2 id="ch05-standard_creation-_17">检定或校准方法的验证<a class="headerlink" href="#ch05-standard_creation-_17" title="Permanent link">&para;</a></h2>
@@ -2111,11 +2117,11 @@
 <p>申请合格后，由计量行政部门颁发计量考核合格证书，证书的有效期为 5 年。过了 5 年之后，想继续从事该项目的检校工作，需要向有关部门申请考核。  </p>
 <p>需要向有关部门提交 《计量标准考核（复查）申请书》、《计量标准技术报告》、《检定和校准的重复性实验》和《计量标准的稳定性考核记录》。</p>
 <p><strong>注意</strong>：新建标和复查申请交的材料有区别，新建两个材料，复查三个材料。  </p>
-<p>新建需要：1《计量标准考核（复查）申请书》和《计量标准技术报告》；  </p>
+<p><strong>新建需要</strong>：1《计量标准考核（复查）申请书》和《计量标准技术报告》；  </p>
 <p>2计量标准器及主要设备的检定或校准证书；  </p>
-<p>复查需要：1《计量标准考核（复查）申请书》和《计量标准技术报告》 ； </p>
+<p><strong>复查需要</strong>：1《计量标准考核（复查）申请书》和《计量标准技术报告》 ； </p>
 <p>2计量标准考核证书有效期内计量标准器主要计量设备的有效检定证书；  </p>
-<p>3计量标准封存、注销、更换的申请材料。 </p>
+<p>3计量标准封存、注销、更换的申请材料。  </p>
 <h2 id="ch05-standard_creation-_20">计量标准考核的后续监管<a class="headerlink" href="#ch05-standard_creation-_20" title="Permanent link">&para;</a></h2>
 <p>包括计量标准和主要配套设备的更换、计量标准的封存和注销、计量标准的恢复和使用。</p>
 <h2 class="no-underline" id="ch05-standard_creation-references">引用来源<a class="headerlink" href="#ch05-standard_creation-references" title="Permanent link">&para;</a></h2>
@@ -2502,6 +2508,11 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">建标检定结果的验证，必考<p>要么通过溯源至上级机构获取标准值，那么通过比对加权平均的方式来获取标准值。用En值，即归一化偏差来描述结果。$$E_n = |x_i-x_s|/\sqrt{U_1^2+U_2^2}$$ 这种情况下，两者不确定度不相关，比如是比对的情况，就需要两者相减了。</p>
+</p>
+</div>
+<h1 id="ch06-problem_case-_3">检定、校准证书<a class="headerlink" href="#ch06-problem_case-_3" title="Permanent link">&para;</a></h1>
+<div class="admonition note">
+<p class="admonition-title">建校准证书是否要给出复校时间？<p>一般不给，如果是计量标准器具的溯源性校准，可以给。顾客有要求时，可以给。    </p>
 </p>
 </div></section><h1 class='nav-section-title-end'>Ended: VI 典型参考题目</h1></div>
 
