@@ -1377,8 +1377,8 @@
 <p>下面我们来了解一下常用的测量方法：<br />
 (1)<strong>直接与间接测量法</strong>：直接测量是指测量设备的量值就是测量结果，间接测量是通过测量某一与测量结果存在函数关系的量来获取测量结果； </p>
 <p>(2) <strong>直接比较测量法和替代测量法</strong>：使用与被测量值同样的已知量相比较的测量方法，称之为直接比较测量法。将选定的且已知其值得同种量替代被测量，比如在天平右边添加砝码使其与被测物平衡，再取下被测物体，使用代替砝码使得天平平衡，这样能消除天平不等臂性带来的系统误差；  </p>
-<p>(3) <strong>微差测量法</strong>: 将被测量与只与其有微小差别的已知同种量相比较，测量相对值。这种测量方法就消除了绝对测量中的环境等其他因素；</p>
-<p>(4) <strong>补偿测量法和零值测量法</strong>：使用往返两个方向来测量消除正向或负向的误差，这种方法称之为补偿测量法，如电学中通常改变电流方向读取正负两个值取平均来消除热电势带来的影响；</p>
+<p>(3) <strong>微差测量法</strong>: 将被测量与只与其有微小差别的已知同种量相比较，测量相对值。这种测量方法就消除了绝对测量中的环境等其他因素；<strong>用游标卡尺测量零件尺寸</strong>，就是微差测量法。</p>
+<p>(4) <strong>补偿测量法和零值测量法</strong>：使用往返两个方向来测量消除正向或负向的误差，这种方法称之为补偿测量法，如电学中通常改变电流方向读取正负两个值取平均来消除热电势带来的影响；所谓零值测量法，指由平衡原理测量被测量的方法，用<strong>电桥测电阻</strong>就是用这种方法。</p>
 <p>(5) <strong>基本测量法和定义测量法</strong>：通过对一些基本量的测量来确定被测量的测量方法称之为基本测量法，根据量的单位定义来确定被测量的测量方法称之为定义测量法。</p>
 <h2 id="ch03-basic_of_metrology-_4">计量<a class="headerlink" href="#ch03-basic_of_metrology-_4" title="Permanent link">&para;</a></h2>
 <p>计量是指“<strong>实现单位统一，量值准确可靠</strong>的活动”。</p>
@@ -1655,8 +1655,8 @@
 <p>如何高效地管理全国这么多从事计量的单位，如何有效保障每一个环节不出现问题？这就需要建立一套完善的计量技术机构管理体系。目前主要是实行 ** JJF 1069-2012《法定计量检定机构考核规范》中的内容。  </p>
 <p>计量技术机构必须配备为正确进行检定所需的<strong>计量标准</strong>，开展校准工作时应该满足客户的需要，具体要校准哪些项目，这和检定不一样。</p>
 <div class="admonition note">
-<p class="admonition-title">注意的问题<p>1、计量溯源性不能保证其测量不确定度满足给定的目的，也不能保证不发生错误；  <br />
-2、</p>
+<p class="admonition-title">注意的问题<p>1、计量溯源性不能保证其测量不确定度满足给定的目的，也不能保证不发生错误； <br />
+2、测量标准都可以作为参照对象用于对其他同类量确定量值；  </p>
 </p>
 </div>
 <h2 class="no-underline" id="ch03-measurement_standard-references">引用来源<a class="headerlink" href="#ch03-measurement_standard-references" title="Permanent link">&para;</a></h2>
@@ -1855,7 +1855,11 @@
 <p>灵敏系数其实就是测量函数 $f$，在$X_i = x$处的偏导数，是一个有符号有量值的量，它表明了输入量$x_i$的不确定度$u(x_i)$对输出量 $u_c(y)$ 的灵敏程度。</p>
 </div>
 <p>当各输入量不相关时，可以简化为$$u_c(y) = \sqrt{\sum_{i=1}^N(\frac{\partial f}{\partial x_i})^2 u^2(x_i)}$$</p>
-<h3 id="ch04-measurement_uncertainty-_8">输入量相关的处理方法<a class="headerlink" href="#ch04-measurement_uncertainty-_8" title="Permanent link">&para;</a></h3>
+<h3 id="ch04-measurement_uncertainty-_8">特殊测量模型的处理<a class="headerlink" href="#ch04-measurement_uncertainty-_8" title="Permanent link">&para;</a></h3>
+<p>1）如果为$Y=A_1X_1+A_2X_2+...+A_nX_n$，且个输入量间不相关时，合成标准不确定度$u_c(y)$可以由下式计算：$$u_c(y)=\sqrt{\sum_{i=1}^{n}A_i^2u_i^2(x_i)}$$</p>
+<p>2）当测量模型为 $Y = A(X_1^{P_1}X_2^{P_2}...X_N^{P_N})$，且各输入量间不相关时，合成标准不确定度可表示为:$$\frac{u_c(y)}{|y|} = \sqrt{\sum_{i=1}^{N}[P_iu(x_i)/x_i]}$$</p>
+<p><strong>注意，这个式子没有系数A</strong></p>
+<h3 id="ch04-measurement_uncertainty-_9">输入量相关的处理方法<a class="headerlink" href="#ch04-measurement_uncertainty-_9" title="Permanent link">&para;</a></h3>
 <p>1、一般来说，对于独立测量，不同的量之间测量结果可以忽略相关性；不同实验室、不同时间、不同设备测量同一个量，也可以假设相关性为零；当$x_i,x_j$中任意一个量可以当作常数处理事，就可以忽略。  </p>
 <p>2、不能忽略的话，可以估计一下<strong>协方差参考值</strong>；对两个输入量$X_i,X_j$同时进行重复观测，设$x_{ik},x_{jk}$分别是输入量$X_i,x_j$的观测值。$k$为测量序号，$\bar{x_i},\bar{x_j}$分别是第$i$和第$j$个输入量的n次测量的算术平均值；则可用下式对协方差值进行估计：$$u(x_i,x_j)=\frac{1}{n-1}\sum_{k=1}^{n}(x_{ik}-\bar{x_i}(x_{ij}-\bar{x_j}))$$当协方差足够小时（其绝对值远远小于输入量标准偏差的乘积，则可以认为这两个输入量无关）。  </p>
 <p>注意，如果是平均值的话，还要除以一个 n ，即$$u(x_i,x_j)=\frac{1}{n(n-1)}\sum_{k=1}^{n}(x_{ik}-\bar{x_i}(x_{ij}-\bar{x_j}))$$</p>
@@ -1863,11 +1867,11 @@
 <p>也可以用经验公式估计相关系数：$$r(x_i,x_j)<em>\approx</em>\frac{u(x_i)\delta_j}{x(x_j)\delta_i}$$，其中$\delta$表示输入量的变化量。 </p>
 <p>4、想办法消除相关性：（1）变换输入量，让两者不具有相关性，比如用高等别量块校准低等别量块的时候，两个量块的温度具有一定相关性，将标准量块的温度$\delta_s$和两者之差$\delta$作为输入量则两者相关性就显著减小了；  </p>
 <p>（2）如果输入量都与同一个变量有关系，比如$f(x_i,x_j)$中的$x_i,x_j$都与温度有关系，则可以将温度T也加入测量模型$f(x_i,x_j,T)$，这样两者就没有相关性了，但都与T有相关性；  </p>
-<h3 id="ch04-measurement_uncertainty-_9">有效自由度<a class="headerlink" href="#ch04-measurement_uncertainty-_9" title="Permanent link">&para;</a></h3>
+<h3 id="ch04-measurement_uncertainty-_10">有效自由度<a class="headerlink" href="#ch04-measurement_uncertainty-_10" title="Permanent link">&para;</a></h3>
 <p>什么是自由度？自由度是指计算某一统计量时，取值不受限制的变量个数，通常为方程个数减去未知数个数。一般来说自由度越高，得到的未知数解越准确。  </p>
 <p>有效自由度的计算公式为：$$v_{eff} = \frac{u_c^4(y)}{\sum_{i=1}^{N}\frac{u_i^4(y)}{v_i}}$$当然，也可以方便地推出相对标准不确定度度的有效自由度表达式：$$v_{eff} = \frac{u_c^4(y)/y}{\sum_{i=1}^{N}\frac{[P_iu(x_i)/x_i]^4}{v_i}}$$此时的测量模型为$$Y=AX_1^{P1}X_2^{P2}X_3^{P3}...X_N^{P_N}$$标准不确定度的自由度为$v_i$，其可以通过公式$$v_i \approx \frac{1}{2}\ [\frac{\Delta u(x_i)}{u(x_i)}]^{-2}$$来估计其自由度。  </p>
 <p>$[\frac{\Delta u(x_i)}{u(x_i)}]$是标准不确定度的相对不确定度。如果为25%的话，则$v_i=\frac{1}{2}[0.25]^{-2}=8$</p>
-<h3 id="ch04-measurement_uncertainty-_10">扩展不确定度<a class="headerlink" href="#ch04-measurement_uncertainty-_10" title="Permanent link">&para;</a></h3>
+<h3 id="ch04-measurement_uncertainty-_11">扩展不确定度<a class="headerlink" href="#ch04-measurement_uncertainty-_11" title="Permanent link">&para;</a></h3>
 <p>扩展不确定度是在合成标准不确定度的基础上再扩展，此举放大了不确定度，也是对测量结果的保守估计。$$U=ku_c$$一般来说选取k=2或者3，k=2时包含概率大约为 95%，k=3时包含概率大约为 99%，即测量值包含在$[y-U \leq Y \leq y+U]$, y是被测量Y的最佳估计值。给出扩展不确定度的同时，一定要给出k值。</p>
 <p>第二种情况：<strong>明确规定包含概率$p$</strong>，这时候就要定量求出$k_p$，$$U = k_pu_c$$。那怎么计算$k_p$呢？一般来说当输出满足小样本的正态分布（t分布）时，可以取$$k_p=t_p(v_{eff})$$，根据其有效自由度，查表可以得到$k_p$。</p>
 <div class="admonition note">
@@ -1875,7 +1879,7 @@
 <p>1、无论如何，扩展不确定度一定要注明 k 等于多少<br />
   2、不确定度不需要 +-号  </p>
 </div>
-<h2 id="ch04-measurement_uncertainty-_11">蒙特卡洛法评定测量不确定度<a class="headerlink" href="#ch04-measurement_uncertainty-_11" title="Permanent link">&para;</a></h2>
+<h2 id="ch04-measurement_uncertainty-_12">蒙特卡洛法评定测量不确定度<a class="headerlink" href="#ch04-measurement_uncertainty-_12" title="Permanent link">&para;</a></h2>
 <p>传统的 GUM 法是根据输入量的标准不确定来合成输出量的标准不确定度的，这是基于测量模型基本线性的基础上，当测量模型非线性的时候，需要考虑对其进行展开来达到线性化的效果。  </p>
 <p>蒙特卡洛（Monte-Carlo Method，MCM）的核心思想是不管多复杂的测量模型，我只需要知道输入量的概率密度函数，来随机生成一个样本空间，经过测量模型，来得到一系列的输出值，最终由多个输出值的概率分布，得到输出量的最佳估计值、标准不确定度和包含区间。  </p>
 <p>MCM方法主要分为四个步骤：1）MCM输入：写出测量模型，给出输入量的概率分布（PDF）；2）MCM传播：根据随机抽样出的样本值，计算响应的模型值；3）MCM输出：根据模型输出值，得到输出量Y的分布函数</p>
@@ -1901,10 +1905,10 @@
 <p>相较而言 MCM 法更加具有普适性，因此可以用 MCM 法对 GUM 法评定的结果进行检验。  </p>
 <p>假设应用 GUM 法得到输出量的包含概率为p 的包含区间为 $y \pm U_p$；运用 MCM 获得输出量的标准不确定度$u(y)$和概率为 p 的对称包含区间端点值为$y_{low}、y_{high}$。  </p>
 <p>数值容差$\delta$ 为不确定度有效位数最后一位数字的一半，如果$$d_{low} = |(y-U_p)-y_{low}|,且d_{high}=|(y+U_p)-y_{high}|$$当$d_{low}$和$d_{high}$都小于$\delta$时认为 GUM 法适用于该测量的不确定度评定。  </p>
-<h2 id="ch04-measurement_uncertainty-_12">常用的误差来源评定方法<a class="headerlink" href="#ch04-measurement_uncertainty-_12" title="Permanent link">&para;</a></h2>
-<h3 id="ch04-measurement_uncertainty-_13">分辨力<a class="headerlink" href="#ch04-measurement_uncertainty-_13" title="Permanent link">&para;</a></h3>
+<h2 id="ch04-measurement_uncertainty-_13">常用的误差来源评定方法<a class="headerlink" href="#ch04-measurement_uncertainty-_13" title="Permanent link">&para;</a></h2>
+<h3 id="ch04-measurement_uncertainty-_14">分辨力<a class="headerlink" href="#ch04-measurement_uncertainty-_14" title="Permanent link">&para;</a></h3>
 <p>如果数字显示仪器的分辨力为$\delta_x$，则区间半宽度为$a=\delta_x/2$，则可设为均匀分布，查表$k=\sqrt{3}$，则由分辨力引入的标准不确定度分量：$$u(x)=\frac{a}{k}$$</p>
-<h2 id="ch04-measurement_uncertainty-_14">如何判断误差属于什么分布<a class="headerlink" href="#ch04-measurement_uncertainty-_14" title="Permanent link">&para;</a></h2>
+<h2 id="ch04-measurement_uncertainty-_15">如何判断误差属于什么分布<a class="headerlink" href="#ch04-measurement_uncertainty-_15" title="Permanent link">&para;</a></h2>
 <p>根据 JJF 1059.1-2012《测量不确定度评定与表示》 的4.3.3.4：  </p>
 <p>1、由数据修约、测量仪器最大允许误差或分辨力、参考数据的误差限、度盘或齿轮的回差、平衡指示器调零不准、测量仪器的滞后或摩擦效应导致的不确定度，通常假设为<strong>均匀分布</strong>；</p>
 <p>2、两相同均匀分布的合成、两个独立量之和或差值服从<strong>三角分布</strong>，如果是两个不同大小的均匀分布合成，则可假设为<strong>梯形分布</strong>；  </p>
@@ -2049,7 +2053,8 @@
 <h2 id="ch05-standard_creation-_5">考核要求<a class="headerlink" href="#ch05-standard_creation-_5" title="Permanent link">&para;</a></h2>
 <p>根据 <strong>JJF</strong> 1033<strong>-2016</strong> 《计量标准考核规范》，里面覆盖6个方面、30项内容，需要逐项逐条进行考评。</p>
 <h3 id="ch05-standard_creation-_6">计量标准器及配套设施<a class="headerlink" href="#ch05-standard_creation-_6" title="Permanent link">&para;</a></h3>
-<p>建标需要一整套<strong>定期溯源</strong>的标准器具及其对应的配套设施，溯源和校准需要定期进行。当其不能检定和校准时，要通过比对等方式溯源。  </p>
+<p>建标需要一整套<strong>定期溯源</strong>的标准器具及其对应的配套设施，溯源和校准需要定期进行。当其不能检定和校准时，要通过比对等方式溯源。    </p>
+<p>注意：配套设施也需要定期送检，不能根据<strong>情况，自行决定</strong>。</p>
 <h3 id="ch05-standard_creation-_7">计量标准特性<a class="headerlink" href="#ch05-standard_creation-_7" title="Permanent link">&para;</a></h3>
 <p>对计量标准的测量范围、不确定度或最大允许误差、稳定性（通过每半年一次的稳定性考核）等计量指标进行考核。其中如果计量标准使用示值或标称值，则稳定性应小于计量标准的最大允许误差，如果使用的是修正值，则稳定性的变化应不大于仪器的扩展不确定度。</p>
 <p><strong>如果标准器坏了，修理后要检定合格才能使用，不能仅通过期间核查即使用</strong>。  </p>
@@ -2076,6 +2081,7 @@
 <p>计量标准的稳定性应当包括计量标准器的稳定性和配套设备的稳定性。 </p>
 <p>稳定性，顾名思义，就是衡量计量标准保持其计量特性随时间恒定的能力。那该怎么考核呢？  </p>
 <p>注意选<strong>稳定的</strong>被测对象，这与重复性不一样。</p>
+<p><strong>稳定性考核， 新建标准要大于1个月，已建标准要少于1年</strong>。</p>
 <p>（1）采用核查标准   </p>
 <p>就是利用量值稳定的被测对象，用考核计量标准反复测（次数大于4），用最大值减去最小值作为该时间段内的稳定性。  </p>
 <p>（2）用高等级的计量标准进行考核  </p>
@@ -2121,7 +2127,7 @@
 <p>2计量标准器及主要设备的检定或校准证书；  </p>
 <p><strong>复查需要</strong>：1《计量标准考核（复查）申请书》和《计量标准技术报告》 ； </p>
 <p>2计量标准考核证书有效期内计量标准器主要计量设备的有效检定证书；  </p>
-<p>3计量标准封存、注销、更换的申请材料。  </p>
+<p>3计量标准<strong>封存、注销、更换</strong>的申请材料。  </p>
 <h2 id="ch05-standard_creation-_20">计量标准考核的后续监管<a class="headerlink" href="#ch05-standard_creation-_20" title="Permanent link">&para;</a></h2>
 <p>包括计量标准和主要配套设备的更换、计量标准的封存和注销、计量标准的恢复和使用。</p>
 <h2 class="no-underline" id="ch05-standard_creation-references">引用来源<a class="headerlink" href="#ch05-standard_creation-references" title="Permanent link">&para;</a></h2>
@@ -2172,7 +2178,8 @@
 <p>主要有 4 个：1）比对前准备，检查设备是否齐全，状态是否好，计量标准是否在有效期内；  </p>
 <p>2）传递标准的交接；  </p>
 <p>3）比对实验；  </p>
-<p>4）提交资料，包括原始数据、测量不确定评定报告等；  </p>
+<p>4）向<strong>主导实验室</strong>，提交资料，包括原始数据、测量不确定评定报告等；    </p>
+<p>5）向比对组织者上报比对报告。</p>
 <h3 id="ch05-metrology_comparison-_11">比对报告<a class="headerlink" href="#ch05-metrology_comparison-_11" title="Permanent link">&para;</a></h3>
 <p>1）比对数据收集；收集好各实验室的比对数据，如有数据的修改；提交原则上不能修改，如要修改，必须提交书面材料，告知理由；  </p>
 <p>2）数据处理 ；主导实验室按照比对实施方案的数据处理方式依次处理各参比实验室的数据，注意如果此时有实验室的数据明显偏移参考值，且此时参考值为各实验室测量结果的平均值时，应该按照<strong>格拉布斯准则</strong>剔除异常值，即$$\frac{|y_d-y_r|}{s} \geq G(\alpha,n)$$式中$G(\alpha,n)$表示与显著性水平$\alpha$及与参加比对的实验室数量 n 有关的格拉布斯临界值，需要查表获得。  </p>
@@ -2341,7 +2348,13 @@
 </p>
 </div>
 <p>2、法定计量检定机构提出复查考核申请的时限为计量授权证书有限期满前的 <strong>6个月</strong>。    </p>
-<p>3、企业、事业单位制造标准物质，应向国务院计量行政部门申请定级鉴定。</p>
+<p>3、企业、事业单位制造标准物质，应向国务院计量行政部门申请定级鉴定。  </p>
+<p>4、如果要改原始记录，对记录的所有改动应有改动人的<strong>签名或签名缩写</strong>。  </p>
+<p>5、内部审核的目的是：验证机构运作和管理体系要求的符合性；  </p>
+<p>6、管理评审的目的是：确保管理体系持续得适应性、充分性和有效性。<strong>管理评审</strong>的输出为资源需求、管理体系有效性及其过程的改进、与法律法规有关的检定、校准的改进。  </p>
+<p>7、计量机构使用非标方法的确认：1）使用参考标准或标准物质进行校准；2）对影响结果的因素进行系统性评审；3）与其他已确认的方法进行结果比对；4）实验室间比对；5）根据对方法原理的理解以及抽样或检测方法的实践经验，评定结果的测量不确定度；  </p>
+<p>8、法定计量检定机构应具有对不符合工作进行控制的政策和程序；a）确定对不符合工作进行管理的责任和权限；b）对不符合工作的严重性进行评价；c）立即进行纠正，同时对不符合工作的可接受性进行判断（<strong>没有预防措施</strong>）；d）必要时，通知顾客并取消工作；e）规定批准恢复工作的职责。  </p>
+<p>9、计量安全需要注意的点：1）防盗；2）防火、防爆、3）防水；4）防毒。</p>
 <h2 id="ch06-problem_law-13">1.3 计量检定的法制管理<a class="headerlink" href="#ch06-problem_law-13" title="Permanent link">&para;</a></h2>
 <p>1、<strong>计量基准</strong>可用于计量仲裁检定；</p>
 <p>2、什么是计量纠纷？是由<strong>计量器具准确度</strong>引起的纠纷；</p>
@@ -2354,6 +2367,9 @@
 <h2 id="ch06-problem_law-14">1.4 计量器具产品的法制管理<a class="headerlink" href="#ch06-problem_law-14" title="Permanent link">&para;</a></h2>
 <h4 id="ch06-problem_law-1_1">1、<a href="https://gkml.samr.gov.cn/nsjg/jls/202010/W020201027321582061939.pdf">实时强制管理的计量器具</a><a class="headerlink" href="#ch06-problem_law-1_1" title="Permanent link">&para;</a></h4>
 <p>要区分哪些计量器具属于强制检定范围，哪些不是。只要记住用于<strong>贸易结算、医疗、环境监测</strong>等对社会具有重大影响的计量器具要实施强制检定。  </p>
+<div class="admonition note">
+<p class="admonition-title"><a href="https://scj.sxxz.gov.cn/zljcssyzsfw/jlfw/202107/t20210726_3659463.html">强制检定的名单</a></p>
+</div>
 <h4 id="ch06-problem_law-2">2、进口计量器具和新产品<a class="headerlink" href="#ch06-problem_law-2" title="Permanent link">&para;</a></h4>
 <p>进口计量器具要向国务院计量行政部门办理型式批准，型式评价是型式批准的技术基础。  </p>
 <p>企业制造了计量器具新产品，需要向当地省级人民政府计量行政部门申请型式批准。</p>
@@ -2362,6 +2378,13 @@
 <p>从低到高：1）部门、企业、事业单位最高计量标准由同级的人民政府计量行政部门考核；  </p>
 <p>2）最高等级的社会公用计量标准由上一级人民政府计量行政部门考核和批准，其他等级的由同一级的计量行政部门考核；  </p>
 <p>3）计量基准由国务院计量行政部门考核；  </p>
+<div class="admonition note">
+<p class="admonition-title">《计量标准考核办法》-计量规章中的原文<p>国家市场监督管理总局组织建立的社会公用计量标准及各省级市场监督管理部门组织建立的各项最高等级的社会公用计量标准，由国家市场监督管理总局主持考核；地（市）、县级市场监督管理部门组织建立的各项最高等级的社会公用计量标准，由上一级市场监督管理部门主持考核；各级地方市场监督管理部门组织建立其他等级的社会公用计量标准，由组织建立计量标准的市场监督管理部门主持考核。</p>
+</p>
+</div>
+<p>国务院有关部门和省、自治区、直辖市有关部门建立的各项最高等级的计量标准，由同级的市场监督管理部门主持考核。</p>
+<p>国务院有关部门所属的企业、事业单位建立的各项最高等级的计量标准，由国家市场监督管理总局主持考核；省、自治区、直辖市有关部门所属的企业、事业单位建立的各项最高等级的计量标准，由当地省级市场监督管理部门主持考核；无主管部门的企业单位建立的各项最高等级的计量标准，由该企业登记注册地的市场监督管理部门主持考核。</p>
+<p>4）计量基准不一定是都建立在国家法定计量检定机构，比如一些特殊行业的基准就可以建立在单位内部的计量机构；计量基准的复核周期一般为5年；  </p>
 <h3 id="ch06-problem_law-2_1">2、商品量的计量监督管理<a class="headerlink" href="#ch06-problem_law-2_1" title="Permanent link">&para;</a></h3>
 <p>这个部分分两种，一类是零售商品称重、一类是定量包装产品。  </p>
 <div class="admonition note">
@@ -2428,7 +2451,12 @@
 <p>11、量纲相同的物理量：<strong>功、能量、力矩</strong>。  </p>
 <p>12、授权有关部门或单位的<strong>专业性、区域性</strong>计量技术机构，作为法定计量检定机构。  </p>
 <p>13、可与国际单位制并用的我国法定计量单位包括：海里 n mile、节 kn。  </p>
-<p>14、</p></section><section class="print-page" id="ch06-problem_datapro"><h1 id="ch06-problem_datapro-_1">概述<a class="headerlink" href="#ch06-problem_datapro-_1" title="Permanent link">&para;</a></h1>
+<p>14、<strong>真值具有单一量值</strong>是错误的，由于定义本身细节不完善，不存在单一真值，值存在与定义一致的一组真值。  </p>
+<p>15、注意量纲前面<strong>没有系数</strong>。  </p>
+<p>16、量纲为1的量有哪些？比如什么系数、渗透率、马赫数、平面角和立体角等，线圈的圈数也是量纲为1的量。  </p>
+<p>17、量纲相同的量其物理含义不一定相同，如功、力矩和热量量纲都相同，但不是同类量。  </p>
+<p>18、测量区间小于等于标称区间。  </p>
+<p>19、与漂移示值有关的是<strong>使用时间长短</strong>，我们一般先放置一段时间或预热就是<strong>减少漂移的</strong>影响。</p></section><section class="print-page" id="ch06-problem_datapro"><h1 id="ch06-problem_datapro-_1">概述<a class="headerlink" href="#ch06-problem_datapro-_1" title="Permanent link">&para;</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">导言</p>
 <p>本节主要收集了测量数据处理中应该注意的点</p>
@@ -2510,7 +2538,9 @@
 <p class="admonition-title">建标检定结果的验证，必考<p>要么通过溯源至上级机构获取标准值，那么通过比对加权平均的方式来获取标准值。用En值，即归一化偏差来描述结果。$$E_n = |x_i-x_s|/\sqrt{U_1^2+U_2^2}$$ 这种情况下，两者不确定度不相关，比如是比对的情况，就需要两者相减了。</p>
 </p>
 </div>
-<h1 id="ch06-problem_case-_3">检定、校准证书<a class="headerlink" href="#ch06-problem_case-_3" title="Permanent link">&para;</a></h1>
+<h2 id="ch06-problem_case-_3">真题考点<a class="headerlink" href="#ch06-problem_case-_3" title="Permanent link">&para;</a></h2>
+<p>1、如果要新购标准器，则需要做什么？ 如果是<strong>准确度等级、最大允许误差等其他重要计量性能提升，则要按照新建标准来重新进行考核</strong>；  如果只是换了同种类型的标准器，仅仅是测量范围等，则应该申请计量标准复查考核。    </p>
+<h1 id="ch06-problem_case-_4">检定、校准证书<a class="headerlink" href="#ch06-problem_case-_4" title="Permanent link">&para;</a></h1>
 <div class="admonition note">
 <p class="admonition-title">建校准证书是否要给出复校时间？<p>一般不给，如果是计量标准器具的溯源性校准，可以给。顾客有要求时，可以给。    </p>
 </p>

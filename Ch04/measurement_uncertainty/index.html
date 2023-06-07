@@ -684,20 +684,27 @@
         
           <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
-    输入量相关的处理方法
+    特殊测量模型的处理
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
-    有效自由度
+    输入量相关的处理方法
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
+    有效自由度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
     扩展不确定度
   </a>
   
@@ -709,7 +716,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     蒙特卡洛法评定测量不确定度
   </a>
   
@@ -736,7 +743,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     常用的误差来源评定方法
   </a>
   
@@ -744,7 +751,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     分辨力
   </a>
   
@@ -756,7 +763,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     如何判断误差属于什么分布
   </a>
   
@@ -1106,20 +1113,27 @@
         
           <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
-    输入量相关的处理方法
+    特殊测量模型的处理
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
-    有效自由度
+    输入量相关的处理方法
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
+    有效自由度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
     扩展不确定度
   </a>
   
@@ -1131,7 +1145,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     蒙特卡洛法评定测量不确定度
   </a>
   
@@ -1158,7 +1172,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     常用的误差来源评定方法
   </a>
   
@@ -1166,7 +1180,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     分辨力
   </a>
   
@@ -1178,7 +1192,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     如何判断误差属于什么分布
   </a>
   
@@ -1295,7 +1309,11 @@
 <p>灵敏系数其实就是测量函数 $f$，在$X_i = x$处的偏导数，是一个有符号有量值的量，它表明了输入量$x_i$的不确定度$u(x_i)$对输出量 $u_c(y)$ 的灵敏程度。</p>
 </div>
 <p>当各输入量不相关时，可以简化为$$u_c(y) = \sqrt{\sum_{i=1}^N(\frac{\partial f}{\partial x_i})^2 u^2(x_i)}$$</p>
-<h3 id="_8">输入量相关的处理方法<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h3 id="_8">特殊测量模型的处理<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>1）如果为$Y=A_1X_1+A_2X_2+...+A_nX_n$，且个输入量间不相关时，合成标准不确定度$u_c(y)$可以由下式计算：$$u_c(y)=\sqrt{\sum_{i=1}^{n}A_i^2u_i^2(x_i)}$$</p>
+<p>2）当测量模型为 $Y = A(X_1^{P_1}X_2^{P_2}...X_N^{P_N})$，且各输入量间不相关时，合成标准不确定度可表示为:$$\frac{u_c(y)}{|y|} = \sqrt{\sum_{i=1}^{N}[P_iu(x_i)/x_i]}$$</p>
+<p><strong>注意，这个式子没有系数A</strong></p>
+<h3 id="_9">输入量相关的处理方法<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>1、一般来说，对于独立测量，不同的量之间测量结果可以忽略相关性；不同实验室、不同时间、不同设备测量同一个量，也可以假设相关性为零；当$x_i,x_j$中任意一个量可以当作常数处理事，就可以忽略。  </p>
 <p>2、不能忽略的话，可以估计一下<strong>协方差参考值</strong>；对两个输入量$X_i,X_j$同时进行重复观测，设$x_{ik},x_{jk}$分别是输入量$X_i,x_j$的观测值。$k$为测量序号，$\bar{x_i},\bar{x_j}$分别是第$i$和第$j$个输入量的n次测量的算术平均值；则可用下式对协方差值进行估计：$$u(x_i,x_j)=\frac{1}{n-1}\sum_{k=1}^{n}(x_{ik}-\bar{x_i}(x_{ij}-\bar{x_j}))$$当协方差足够小时（其绝对值远远小于输入量标准偏差的乘积，则可以认为这两个输入量无关）。  </p>
 <p>注意，如果是平均值的话，还要除以一个 n ，即$$u(x_i,x_j)=\frac{1}{n(n-1)}\sum_{k=1}^{n}(x_{ik}-\bar{x_i}(x_{ij}-\bar{x_j}))$$</p>
@@ -1303,11 +1321,11 @@
 <p>也可以用经验公式估计相关系数：$$r(x_i,x_j)<em>\approx</em>\frac{u(x_i)\delta_j}{x(x_j)\delta_i}$$，其中$\delta$表示输入量的变化量。 </p>
 <p>4、想办法消除相关性：（1）变换输入量，让两者不具有相关性，比如用高等别量块校准低等别量块的时候，两个量块的温度具有一定相关性，将标准量块的温度$\delta_s$和两者之差$\delta$作为输入量则两者相关性就显著减小了；  </p>
 <p>（2）如果输入量都与同一个变量有关系，比如$f(x_i,x_j)$中的$x_i,x_j$都与温度有关系，则可以将温度T也加入测量模型$f(x_i,x_j,T)$，这样两者就没有相关性了，但都与T有相关性；  </p>
-<h3 id="_9">有效自由度<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h3 id="_10">有效自由度<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>什么是自由度？自由度是指计算某一统计量时，取值不受限制的变量个数，通常为方程个数减去未知数个数。一般来说自由度越高，得到的未知数解越准确。  </p>
 <p>有效自由度的计算公式为：$$v_{eff} = \frac{u_c^4(y)}{\sum_{i=1}^{N}\frac{u_i^4(y)}{v_i}}$$当然，也可以方便地推出相对标准不确定度度的有效自由度表达式：$$v_{eff} = \frac{u_c^4(y)/y}{\sum_{i=1}^{N}\frac{[P_iu(x_i)/x_i]^4}{v_i}}$$此时的测量模型为$$Y=AX_1^{P1}X_2^{P2}X_3^{P3}...X_N^{P_N}$$标准不确定度的自由度为$v_i$，其可以通过公式$$v_i \approx \frac{1}{2}\ [\frac{\Delta u(x_i)}{u(x_i)}]^{-2}$$来估计其自由度。  </p>
 <p>$[\frac{\Delta u(x_i)}{u(x_i)}]$是标准不确定度的相对不确定度。如果为25%的话，则$v_i=\frac{1}{2}[0.25]^{-2}=8$</p>
-<h3 id="_10">扩展不确定度<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h3 id="_11">扩展不确定度<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>扩展不确定度是在合成标准不确定度的基础上再扩展，此举放大了不确定度，也是对测量结果的保守估计。$$U=ku_c$$一般来说选取k=2或者3，k=2时包含概率大约为 95%，k=3时包含概率大约为 99%，即测量值包含在$[y-U \leq Y \leq y+U]$, y是被测量Y的最佳估计值。给出扩展不确定度的同时，一定要给出k值。</p>
 <p>第二种情况：<strong>明确规定包含概率$p$</strong>，这时候就要定量求出$k_p$，$$U = k_pu_c$$。那怎么计算$k_p$呢？一般来说当输出满足小样本的正态分布（t分布）时，可以取$$k_p=t_p(v_{eff})$$，根据其有效自由度，查表可以得到$k_p$。</p>
 <div class="admonition note">
@@ -1315,7 +1333,7 @@
 <p>1、无论如何，扩展不确定度一定要注明 k 等于多少<br />
   2、不确定度不需要 +-号  </p>
 </div>
-<h2 id="_11">蒙特卡洛法评定测量不确定度<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h2 id="_12">蒙特卡洛法评定测量不确定度<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <p>传统的 GUM 法是根据输入量的标准不确定来合成输出量的标准不确定度的，这是基于测量模型基本线性的基础上，当测量模型非线性的时候，需要考虑对其进行展开来达到线性化的效果。  </p>
 <p>蒙特卡洛（Monte-Carlo Method，MCM）的核心思想是不管多复杂的测量模型，我只需要知道输入量的概率密度函数，来随机生成一个样本空间，经过测量模型，来得到一系列的输出值，最终由多个输出值的概率分布，得到输出量的最佳估计值、标准不确定度和包含区间。  </p>
 <p>MCM方法主要分为四个步骤：1）MCM输入：写出测量模型，给出输入量的概率分布（PDF）；2）MCM传播：根据随机抽样出的样本值，计算响应的模型值；3）MCM输出：根据模型输出值，得到输出量Y的分布函数</p>
@@ -1341,10 +1359,10 @@
 <p>相较而言 MCM 法更加具有普适性，因此可以用 MCM 法对 GUM 法评定的结果进行检验。  </p>
 <p>假设应用 GUM 法得到输出量的包含概率为p 的包含区间为 $y \pm U_p$；运用 MCM 获得输出量的标准不确定度$u(y)$和概率为 p 的对称包含区间端点值为$y_{low}、y_{high}$。  </p>
 <p>数值容差$\delta$ 为不确定度有效位数最后一位数字的一半，如果$$d_{low} = |(y-U_p)-y_{low}|,且d_{high}=|(y+U_p)-y_{high}|$$当$d_{low}$和$d_{high}$都小于$\delta$时认为 GUM 法适用于该测量的不确定度评定。  </p>
-<h2 id="_12">常用的误差来源评定方法<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
-<h3 id="_13">分辨力<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<h2 id="_13">常用的误差来源评定方法<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h3 id="_14">分辨力<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
 <p>如果数字显示仪器的分辨力为$\delta_x$，则区间半宽度为$a=\delta_x/2$，则可设为均匀分布，查表$k=\sqrt{3}$，则由分辨力引入的标准不确定度分量：$$u(x)=\frac{a}{k}$$</p>
-<h2 id="_14">如何判断误差属于什么分布<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h2 id="_15">如何判断误差属于什么分布<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
 <p>根据 JJF 1059.1-2012《测量不确定度评定与表示》 的4.3.3.4：  </p>
 <p>1、由数据修约、测量仪器最大允许误差或分辨力、参考数据的误差限、度盘或齿轮的回差、平衡指示器调零不准、测量仪器的滞后或摩擦效应导致的不确定度，通常假设为<strong>均匀分布</strong>；</p>
 <p>2、两相同均匀分布的合成、两个独立量之和或差值服从<strong>三角分布</strong>，如果是两个不同大小的均匀分布合成，则可假设为<strong>梯形分布</strong>；  </p>
