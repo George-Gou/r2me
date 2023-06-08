@@ -1808,6 +1808,11 @@
 <td align="center">$a/\sqrt{2}$</td>
 <td align="center">$\sqrt{2}$</td>
 </tr>
+<tr>
+<td align="center">两点</td>
+<td align="center">a</td>
+<td align="center">1</td>
+</tr>
 </tbody>
 </table>
 <h2 id="ch04-measurement_uncertainty-gum">用GUM法评定测量不确定度<a class="headerlink" href="#ch04-measurement_uncertainty-gum" title="Permanent link">&para;</a></h2>
@@ -1864,7 +1869,7 @@
 <p>2、不能忽略的话，可以估计一下<strong>协方差参考值</strong>；对两个输入量$X_i,X_j$同时进行重复观测，设$x_{ik},x_{jk}$分别是输入量$X_i,x_j$的观测值。$k$为测量序号，$\bar{x_i},\bar{x_j}$分别是第$i$和第$j$个输入量的n次测量的算术平均值；则可用下式对协方差值进行估计：$$u(x_i,x_j)=\frac{1}{n-1}\sum_{k=1}^{n}(x_{ik}-\bar{x_i}(x_{ij}-\bar{x_j}))$$当协方差足够小时（其绝对值远远小于输入量标准偏差的乘积，则可以认为这两个输入量无关）。  </p>
 <p>注意，如果是平均值的话，还要除以一个 n ，即$$u(x_i,x_j)=\frac{1}{n(n-1)}\sum_{k=1}^{n}(x_{ik}-\bar{x_i}(x_{ij}-\bar{x_j}))$$</p>
 <p>3、<strong>关于相关系数的计算</strong>：$$r(x,y)  = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}{(n-1)s(x)x(y)}$$</p>
-<p>也可以用经验公式估计相关系数：$$r(x_i,x_j)<em>\approx</em>\frac{u(x_i)\delta_j}{x(x_j)\delta_i}$$，其中$\delta$表示输入量的变化量。 </p>
+<p>也可以用经验公式估计相关系数：$$r(x_i,x_j)\approx\frac{u(x_i)\delta_j}{x(x_j)\delta_i}$$，其中$\delta$表示输入量的变化量。 </p>
 <p>4、想办法消除相关性：（1）变换输入量，让两者不具有相关性，比如用高等别量块校准低等别量块的时候，两个量块的温度具有一定相关性，将标准量块的温度$\delta_s$和两者之差$\delta$作为输入量则两者相关性就显著减小了；  </p>
 <p>（2）如果输入量都与同一个变量有关系，比如$f(x_i,x_j)$中的$x_i,x_j$都与温度有关系，则可以将温度T也加入测量模型$f(x_i,x_j,T)$，这样两者就没有相关性了，但都与T有相关性；  </p>
 <h3 id="ch04-measurement_uncertainty-_10">有效自由度<a class="headerlink" href="#ch04-measurement_uncertainty-_10" title="Permanent link">&para;</a></h3>
@@ -1972,7 +1977,12 @@
 <p>校准的目的是确定被校对象示值与对应的由计量标准所复现的量值之间的关系。  </p>
 <h2 id="ch05-verification_calibration-_6">什么是计量检测<a class="headerlink" href="#ch05-verification_calibration-_6" title="Permanent link">&para;</a></h2>
 <p>检测是指按照某一程序确定某一种或多种特性的技术操作。法定计量检定机构从事的计量检测，主要是指计量器具新产品和进口计量器具的型式评价，定量包装商品净含量以能源效率标识的检测。</p>
-<h2 id="ch05-verification_calibration-_7">检定、校准的过程<a class="headerlink" href="#ch05-verification_calibration-_7" title="Permanent link">&para;</a></h2>
+<h1 id="ch05-verification_calibration-_7">检定校准依据的技术规范<a class="headerlink" href="#ch05-verification_calibration-_7" title="Permanent link">&para;</a></h1>
+<h2 id="ch05-verification_calibration-_8">检定<a class="headerlink" href="#ch05-verification_calibration-_8" title="Permanent link">&para;</a></h2>
+<p>依据国家计量检定系统表和国家计量检定规程；</p>
+<h2 id="ch05-verification_calibration-_9">校准<a class="headerlink" href="#ch05-verification_calibration-_9" title="Permanent link">&para;</a></h2>
+<p>应根据顾客的要求选择适当的技术文件。首选国家计量校准规范、没有的话，可以根据公开发布的技术标准自编方法，经过方法确认后使用。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     </p>
+<h2 id="ch05-verification_calibration-_10">检定、校准的过程<a class="headerlink" href="#ch05-verification_calibration-_10" title="Permanent link">&para;</a></h2>
 <h3 id="ch05-verification_calibration-1">1、提出需求<a class="headerlink" href="#ch05-verification_calibration-1" title="Permanent link">&para;</a></h3>
 <p>首先是客户提出需求，具体到检定还是校准，首次检定还是后续检定；</p>
 <h3 id="ch05-verification_calibration-2">2、查找规程<a class="headerlink" href="#ch05-verification_calibration-2" title="Permanent link">&para;</a></h3>
@@ -1981,45 +1991,49 @@
 <p>对于非标准方法，需要经过确认才能使用。确认的方法有多种，包括 1）使用参考物质来进行校准，评价其偏离程度或精密度；  2）实验室比对；3）其其他已确认的方法进行比较；4）根据实验经验，评定结果的测量不确定度；5）对影响因素进行系统性评审；6）改变受控参数，检验方法的稳健度。</p>
 <h3 id="ch05-verification_calibration-4">4、编写作业指导书<a class="headerlink" href="#ch05-verification_calibration-4" title="Permanent link">&para;</a></h3>
 <p>实际在检定或校准时，检定规程中的描述与各实验室的实际情况有所不同，这时需要计量师根据规程编写通俗的作业指导书，目的是让检定员能够方便对其进行操作。  </p>
-<h2 id="ch05-verification_calibration-_8">检定、校准项目的要求<a class="headerlink" href="#ch05-verification_calibration-_8" title="Permanent link">&para;</a></h2>
-<h3 id="ch05-verification_calibration-_9">规范的选取<a class="headerlink" href="#ch05-verification_calibration-_9" title="Permanent link">&para;</a></h3>
+<h2 id="ch05-verification_calibration-_11">检定、校准项目的要求<a class="headerlink" href="#ch05-verification_calibration-_11" title="Permanent link">&para;</a></h2>
+<h3 id="ch05-verification_calibration-_12">规范的选取<a class="headerlink" href="#ch05-verification_calibration-_12" title="Permanent link">&para;</a></h3>
 <p>在开展检定或校准时，一个项目至少要安排两名具有相应能力的人员。在进行检校时，应该使用经过计量标准考核并取得证书的计量标准，规范应该选取上一级的计量标准或基准。  </p>
-<h3 id="ch05-verification_calibration-_10">条件控制<a class="headerlink" href="#ch05-verification_calibration-_10" title="Permanent link">&para;</a></h3>
+<h3 id="ch05-verification_calibration-_13">条件控制<a class="headerlink" href="#ch05-verification_calibration-_13" title="Permanent link">&para;</a></h3>
 <p>需要按照检校规程要求，对实验室的环境参数进行控制，如温度、湿度、气压等条件。  </p>
-<h3 id="ch05-verification_calibration-_11">原始记录<a class="headerlink" href="#ch05-verification_calibration-_11" title="Permanent link">&para;</a></h3>
+<h3 id="ch05-verification_calibration-_14">原始记录<a class="headerlink" href="#ch05-verification_calibration-_14" title="Permanent link">&para;</a></h3>
 <p>原始记录是每一次检校工作留下的最原始信息，这是报告数据的来源，需要永久保留。 一是要确保其真实性；二是需要确保其信息量要足够，包括温度、湿度、测量项目，以提供数据让其他实验室复现测量结果。  </p>
 <p>原始记录的保存时间一般不小于 4 年，根据实际需要制定。  </p>
 <p>如果有问题，可以责令以后注意，不能再改了，包括把手写记录录入到计算机里。</p>
-<h3 id="ch05-verification_calibration-_12">状态标志<a class="headerlink" href="#ch05-verification_calibration-_12" title="Permanent link">&para;</a></h3>
+<h3 id="ch05-verification_calibration-_15">状态标志<a class="headerlink" href="#ch05-verification_calibration-_15" title="Permanent link">&para;</a></h3>
 <p>在完成检定、校准工作后，需要对其贴上状态标志，如检定合格证、校准证（准用证）。</p>
-<h2 id="ch05-verification_calibration-_13">检定、校准项目的维护<a class="headerlink" href="#ch05-verification_calibration-_13" title="Permanent link">&para;</a></h2>
+<h2 id="ch05-verification_calibration-_16">检定、校准项目的维护<a class="headerlink" href="#ch05-verification_calibration-_16" title="Permanent link">&para;</a></h2>
 <p>一个计量检定机构要持续开展业务的话，需要对其计量基础设施进行定期、必要的维护，才能保证工作计量器具处于正常工作状态。  </p>
-<h3 id="ch05-verification_calibration-_14">周期检定计划编制<a class="headerlink" href="#ch05-verification_calibration-_14" title="Permanent link">&para;</a></h3>
+<h3 id="ch05-verification_calibration-_17">周期检定计划编制<a class="headerlink" href="#ch05-verification_calibration-_17" title="Permanent link">&para;</a></h3>
 <p>对于单位内部使用的计量标准器具来说，其需要每年定期进行溯源才能保证其量值的准确性，以保证量值传递链条的可靠性；</p>
-<h3 id="ch05-verification_calibration-_15">计量设备的维护<a class="headerlink" href="#ch05-verification_calibration-_15" title="Permanent link">&para;</a></h3>
+<h3 id="ch05-verification_calibration-_18">计量设备的维护<a class="headerlink" href="#ch05-verification_calibration-_18" title="Permanent link">&para;</a></h3>
 <p>计量设备经过购置、验收、建档、溯源、贴标、维护、期间核查等环节，确保计量器具处于正常工作状态才能够开展计量检定业务。  </p>
 <p>这里需要注意一下期间核查，期间核查是为了确定计量标准、标准物质或其他测量仪器是否保持其原有状态而进行的操作。  </p>
-<h2 id="ch05-verification_calibration-_16">证书<a class="headerlink" href="#ch05-verification_calibration-_16" title="Permanent link">&para;</a></h2>
+<h2 id="ch05-verification_calibration-_19">证书<a class="headerlink" href="#ch05-verification_calibration-_19" title="Permanent link">&para;</a></h2>
 <p>检定、校准、检测工作完成后，需要出具相应证书。其中检定证书需要出具合格或不合格标识，校准证书要给出校准结果。</p>
-<h3 id="ch05-verification_calibration-_17">计量检定中的印、证<a class="headerlink" href="#ch05-verification_calibration-_17" title="Permanent link">&para;</a></h3>
+<h3 id="ch05-verification_calibration-_20">计量检定中的印、证<a class="headerlink" href="#ch05-verification_calibration-_20" title="Permanent link">&para;</a></h3>
 <p>包括检定证书、检定结果通知书（不合格）、检定合格证、检定合格印、注销印（不合格）。</p>
-<h3 id="ch05-verification_calibration-_18">校准证书<a class="headerlink" href="#ch05-verification_calibration-_18" title="Permanent link">&para;</a></h3>
+<h3 id="ch05-verification_calibration-_21">校准证书<a class="headerlink" href="#ch05-verification_calibration-_21" title="Permanent link">&para;</a></h3>
 <p>校准证书一般不给出校准间隔时间的建议。校准证书还应给出校准结果的不确定度</p>
-<h2 id="ch05-verification_calibration-_19">证书的修改和变更<a class="headerlink" href="#ch05-verification_calibration-_19" title="Permanent link">&para;</a></h2>
+<h2 id="ch05-verification_calibration-_22">证书的修改和变更<a class="headerlink" href="#ch05-verification_calibration-_22" title="Permanent link">&para;</a></h2>
 <p>有两种方式，一种是不收回，采用追加文件的形式，追加文件上应声明：“对序号****的检定证书的补充文件”。  </p>
 <p>第二种是替换。即原始记录的数据错误、方法错误等，需要将原证书收回，新出具的证书需要<strong>重新编号</strong>。</p>
-<h2 id="ch05-verification_calibration-_20">计量检定和校准规范的编写<a class="headerlink" href="#ch05-verification_calibration-_20" title="Permanent link">&para;</a></h2>
+<h2 id="ch05-verification_calibration-_23">计量检定和校准规范的编写<a class="headerlink" href="#ch05-verification_calibration-_23" title="Permanent link">&para;</a></h2>
 <p>参考依据是：  </p>
 <p>检定规程：JJF 1002-2010《国家计量检定规程编写规则》  </p>
 <p>校准规范：JJF 1071-2010《国家计量校准规范编写规则》  </p>
-<h3 id="ch05-verification_calibration-_21">检定规程包含的内容<a class="headerlink" href="#ch05-verification_calibration-_21" title="Permanent link">&para;</a></h3>
+<h3 id="ch05-verification_calibration-_24">检定规程包含的内容<a class="headerlink" href="#ch05-verification_calibration-_24" title="Permanent link">&para;</a></h3>
 <p>封面、扉页、目录、引言、范围、~~引用文件~~，~~术语和计量单位~~、概述、计量性能要求、通用技术要求、计量器具控制、附录。除了删除线的内容，其他的是必备章节。  </p>
 <p>计量器具控制内容包括：首次检定、后续检定和使用中检查，检定条件，检定项目，检定方法，检定结果处理，检定周期。  </p>
-<h3 id="ch05-verification_calibration-_22">计量校准规范包含的内容<a class="headerlink" href="#ch05-verification_calibration-_22" title="Permanent link">&para;</a></h3>
+<h3 id="ch05-verification_calibration-_25">计量校准规范包含的内容<a class="headerlink" href="#ch05-verification_calibration-_25" title="Permanent link">&para;</a></h3>
 <p>封面、扉页、目录、引言、范围、~~引用文件~~、~~术语与计量单位~~、~~概述~~、计量特性、校准条件、校准项目和校准方法、校准结果表达、~~复校时间间隔~~、附录、~~附加说明~~。</p>
-<h3 id="ch05-verification_calibration-_23">检定与校准规范的内容对比<a class="headerlink" href="#ch05-verification_calibration-_23" title="Permanent link">&para;</a></h3>
+<h3 id="ch05-verification_calibration-_26">检定与校准规范的内容对比<a class="headerlink" href="#ch05-verification_calibration-_26" title="Permanent link">&para;</a></h3>
 <p>必备的章节，两种计量规范都有10个。其中前5个与最后1个相同，分别为封面、扉页、目录、引言、范围、附录。  </p>
 <p>检定规程里面还有<strong>概述（必须项目、校准规范不是）</strong>、计量性能要求（校准规范里面校计量特性）、通用技术要求、计量器具控制；校准规范里面还有计量特性、校准条件、校准项目和校准方法、校准结果表达。</p>
+<div class="admonition note">
+<p class="admonition-title">检定规程里的计量器具控制究竟有哪些内容？<p>可以用$E_n$值来解决。</p>
+</p>
+</div>
 <h2 class="no-underline" id="ch05-verification_calibration-references">引用来源<a class="headerlink" href="#ch05-verification_calibration-references" title="Permanent link">&para;</a></h2>
 <div class="footnote">
 <hr />
@@ -2045,39 +2059,44 @@
 <p>2、国家计量检定系统表以及相应的计量检定规程或计量技术规范。  </p>
 <h2 id="ch05-standard_creation-_3">命名与编码规则<a class="headerlink" href="#ch05-standard_creation-_3" title="Permanent link">&para;</a></h2>
 <p><strong>JJG 966-2010</strong> 《手持式激光测距仪》、<strong>JJF 1313-2011</strong> 《手持式测距仪型式评价大纲》、<strong>JJF 1942-2021</strong>导航型卫星接收机校准规范，以上是在 <a href="http://jjg.spc.org.cn/resmea/view/index">国家计量技术规范全文公开系统</a>查询的一些规范文件，这些文件的命名规则是什么，前面的代码和数字意味着什么？我们这一节就来探讨这个问题。  </p>
-<h3 id="ch05-standard_creation-_4">命名原则<a class="headerlink" href="#ch05-standard_creation-_4" title="Permanent link">&para;</a></h3>
+<h2 id="ch05-standard_creation-_4">计量标准使用条件<a class="headerlink" href="#ch05-standard_creation-_4" title="Permanent link">&para;</a></h2>
+<p>1）经过计量检定；  </p>
+<p>2）具有称职的保存、维护、使用人员；  </p>
+<p>3）具备完善的管理制度；  </p>
+<p>4）环境条件及设施满足规定要求；  </p>
+<h3 id="ch05-standard_creation-_5">命名原则<a class="headerlink" href="#ch05-standard_creation-_5" title="Permanent link">&para;</a></h3>
 <p>1、主要计量标准器+参量：如 <strong>JJG 326-2021</strong> 转速标准装置；  </p>
 <p>2、计量器具+参量：如 <strong>JJG 960-2012</strong> 水准仪检定装置；   </p>
 <p>3、计量基准装置+参量：如 <strong>JJG 755-2015</strong> 紫外辐射照度工作基准装置；  </p>
 <p>4、其他规则：加入测量范围、等级、方法等特征词加以描述，如<strong>JJF 1347-2012</strong> 全球定位系统(GPS)接收机(测地型)型式评价大纲；</p>
-<h2 id="ch05-standard_creation-_5">考核要求<a class="headerlink" href="#ch05-standard_creation-_5" title="Permanent link">&para;</a></h2>
+<h2 id="ch05-standard_creation-_6">考核要求<a class="headerlink" href="#ch05-standard_creation-_6" title="Permanent link">&para;</a></h2>
 <p>根据 <strong>JJF</strong> 1033<strong>-2016</strong> 《计量标准考核规范》，里面覆盖6个方面、30项内容，需要逐项逐条进行考评。</p>
-<h3 id="ch05-standard_creation-_6">计量标准器及配套设施<a class="headerlink" href="#ch05-standard_creation-_6" title="Permanent link">&para;</a></h3>
+<h3 id="ch05-standard_creation-_7">计量标准器及配套设施<a class="headerlink" href="#ch05-standard_creation-_7" title="Permanent link">&para;</a></h3>
 <p>建标需要一整套<strong>定期溯源</strong>的标准器具及其对应的配套设施，溯源和校准需要定期进行。当其不能检定和校准时，要通过比对等方式溯源。    </p>
 <p>注意：配套设施也需要定期送检，不能根据<strong>情况，自行决定</strong>。</p>
-<h3 id="ch05-standard_creation-_7">计量标准特性<a class="headerlink" href="#ch05-standard_creation-_7" title="Permanent link">&para;</a></h3>
+<h3 id="ch05-standard_creation-_8">计量标准特性<a class="headerlink" href="#ch05-standard_creation-_8" title="Permanent link">&para;</a></h3>
 <p>对计量标准的测量范围、不确定度或最大允许误差、稳定性（通过每半年一次的稳定性考核）等计量指标进行考核。其中如果计量标准使用示值或标称值，则稳定性应小于计量标准的最大允许误差，如果使用的是修正值，则稳定性的变化应不大于仪器的扩展不确定度。</p>
 <p><strong>如果标准器坏了，修理后要检定合格才能使用，不能仅通过期间核查即使用</strong>。  </p>
 <p>对于标准物质，需要在<strong>有效期内</strong>。</p>
-<h3 id="ch05-standard_creation-_8">环境条件及设施<a class="headerlink" href="#ch05-standard_creation-_8" title="Permanent link">&para;</a></h3>
+<h3 id="ch05-standard_creation-_9">环境条件及设施<a class="headerlink" href="#ch05-standard_creation-_9" title="Permanent link">&para;</a></h3>
 <p>建标的实验室需要有满足检定或校准规程的条件，如对温度、湿度的控制等。  </p>
-<h3 id="ch05-standard_creation-_9">人员<a class="headerlink" href="#ch05-standard_creation-_9" title="Permanent link">&para;</a></h3>
+<h3 id="ch05-standard_creation-_10">人员<a class="headerlink" href="#ch05-standard_creation-_10" title="Permanent link">&para;</a></h3>
 <p>每个建标的项目需要配备相应的检校人员，一般至少两名。</p>
-<h3 id="ch05-standard_creation-_10">文件集<a class="headerlink" href="#ch05-standard_creation-_10" title="Permanent link">&para;</a></h3>
+<h3 id="ch05-standard_creation-_11">文件集<a class="headerlink" href="#ch05-standard_creation-_11" title="Permanent link">&para;</a></h3>
 <p>一个建标项目需要一些基本技术文件作为支撑。 包括1）计量检定规程、2）计量标准技术报告，包括计量标准器、计量标准主要技术指标和环境、量值溯源与传递框图、检定或校准结果的重复性实验、不确定度评定、结果验证；3）原始记录等；4）检定、校准证书；5）管理制度；等18个文件。这些文件是维护计量标准的必要条件。  </p>
-<h3 id="ch05-standard_creation-_11">测量能力的确认<a class="headerlink" href="#ch05-standard_creation-_11" title="Permanent link">&para;</a></h3>
+<h3 id="ch05-standard_creation-_12">测量能力的确认<a class="headerlink" href="#ch05-standard_creation-_12" title="Permanent link">&para;</a></h3>
 <p>主要有两种方式：1）通过对技术资料审查来确认，包括稳定性考核、检校重复性实验等资料；2）通过现场实验的方式来考察。  </p>
 <div class="admonition note">
 <p class="admonition-title">对于国家标准物质的管理<p>计量标准中使用的标准物质应该使用有证书的国家标准物质，并且在有效期内。</p>
 </p>
 </div>
-<h2 id="ch05-standard_creation-_12">计量标准考核中的技术问题<a class="headerlink" href="#ch05-standard_creation-_12" title="Permanent link">&para;</a></h2>
-<h3 id="ch05-standard_creation-_13">重复性<a class="headerlink" href="#ch05-standard_creation-_13" title="Permanent link">&para;</a></h3>
+<h2 id="ch05-standard_creation-_13">计量标准考核中的技术问题<a class="headerlink" href="#ch05-standard_creation-_13" title="Permanent link">&para;</a></h2>
+<h3 id="ch05-standard_creation-_14">重复性<a class="headerlink" href="#ch05-standard_creation-_14" title="Permanent link">&para;</a></h3>
 <p>首先一个单位要建立计量标准，大家都知道，计量标准要有足够好的重复性，且要能复现。检定或校准结果的重复性应当直接作为一个不确定度来源用于不确定度评定当中。    </p>
 <p>通常用重复性测量条件下所得的检校结果的分散性定量地表示，即<strong>单次</strong>检校结果实验标准偏差来表示，多次的偏差是衡量稳定性。  </p>
 <p>如果重复性超过新建标时测得的重复性，则需要对<strong>不确定度</strong>再次评定。</p>
 <p><strong>选常规的被测对象</strong>。</p>
-<h3 id="ch05-standard_creation-_14">稳定性<a class="headerlink" href="#ch05-standard_creation-_14" title="Permanent link">&para;</a></h3>
+<h3 id="ch05-standard_creation-_15">稳定性<a class="headerlink" href="#ch05-standard_creation-_15" title="Permanent link">&para;</a></h3>
 <p>计量标准的稳定性应当包括计量标准器的稳定性和配套设备的稳定性。 </p>
 <p>稳定性，顾名思义，就是衡量计量标准保持其计量特性随时间恒定的能力。那该怎么考核呢？  </p>
 <p>注意选<strong>稳定的</strong>被测对象，这与重复性不一样。</p>
@@ -2093,7 +2112,7 @@
 <p>如果规程上有明确规定，可以使用该方法。  </p>
 <p>（5）采用计量标准器的稳定性考核结果  </p>
 <p>计量标准的稳定性归根结底还是计量标准器的稳定性。</p>
-<h3 id="ch05-standard_creation-_15">稳定性的判别方法<a class="headerlink" href="#ch05-standard_creation-_15" title="Permanent link">&para;</a></h3>
+<h3 id="ch05-standard_creation-_16">稳定性的判别方法<a class="headerlink" href="#ch05-standard_creation-_16" title="Permanent link">&para;</a></h3>
 <p>有了稳定性的测量方法了，那实际操作中如何去判断稳定性的好坏呢？  </p>
 <p>一般来说，计量标准在使用中使用示值或标称值的话，稳定性不应该超过其最大允许误差；  </p>
 <p>如果使用修正值的话，其稳定性应当小于修正值的<strong>扩展</strong>不确定度；  </p>
@@ -2106,20 +2125,20 @@
 <p class="admonition-title">稳定性考核的周期！<p>对于新建标准，每个一段时间（大于1个月）进行一次稳定性考核，对于已建标准，每年至少进行1次稳定性考核。</p>
 </p>
 </div>
-<h2 id="ch05-standard_creation-_16">不确定度有关问题<a class="headerlink" href="#ch05-standard_creation-_16" title="Permanent link">&para;</a></h2>
+<h2 id="ch05-standard_creation-_17">不确定度有关问题<a class="headerlink" href="#ch05-standard_creation-_17" title="Permanent link">&para;</a></h2>
 <p>对于每个要考核的计量标准，都需要给出常规的被测对象的测量不确定度。特别的，对于<strong>多参数、多量程</strong>的计量标准，要分段给出各个条件下的典型测量不确定度。</p>
-<h2 id="ch05-standard_creation-_17">检定或校准方法的验证<a class="headerlink" href="#ch05-standard_creation-_17" title="Permanent link">&para;</a></h2>
+<h2 id="ch05-standard_creation-_18">检定或校准方法的验证<a class="headerlink" href="#ch05-standard_creation-_18" title="Permanent link">&para;</a></h2>
 <p>对于我们检校的结果，有什么方法可以验证呢？一个很直观的想法就是使用<strong>更高级别的计量标准</strong>来验证，找不到的话，就使用相同准确度的计量标准通过<strong>比对</strong>的方式验证。  </p>
 <p>1、传递比较法  </p>
 <p>如果本标准和参考标准测量值分别为$y_{lab},y_{ref}$，且其测量不确定度为$U_{lab},U_{ref}$，如其满足$$|y_{lab}-y_{ref}| \leq \sqrt{U^2_{lab}+U^2_{ref}}$$且如果$$U_{ref} \leq \frac{U_{lab}}{3}$$时，即满足三分之一准则，则可以忽略$U_{ref}$的影响。  </p>
 <p>2、比对法  </p>
 <p>将各建标单位联合起来比测，大家根据测量不确定度来加权平均，其加权平均值$\bar y就是参考值。  </p>
 <p>若建标单位的测量值为$y_{lab}$，其测量不确定度为 $U_{lab}$，$n$为参比实验室的个数，在被考核建标单位测量结果的方差比较接近于各实验室的平均方差的时候，若$$|Y_{lab}-\bar y| \leq \sqrt{\frac{n-1}{n}}U_{lab}$$可以认为该实验室通过验证。</p>
-<h2 id="ch05-standard_creation-_18">量值溯源和传递框图<a class="headerlink" href="#ch05-standard_creation-_18" title="Permanent link">&para;</a></h2>
+<h2 id="ch05-standard_creation-_19">量值溯源和传递框图<a class="headerlink" href="#ch05-standard_creation-_19" title="Permanent link">&para;</a></h2>
 <p>计量标准的量值溯源和传递框图包含三级三要素。本级计量标准要向上溯源至上一级计量标准，可以不写到计量基准，到下一级计量器具，也可以不写到工作用计量器具。每一级之间需要注明溯源及传递方法。   </p>
 <p>其中上一级内容包含：计量基准名称，不确定度或准确度等级或最大允许误差，保存机构。  </p>
 <p>注意区分量值溯源与传递框图与<strong>国家计量检定系统表</strong>的区别，前者不需要写到计量基准和工作计量器具，只需要写上一级和下一级。</p>
-<h2 id="ch05-standard_creation-_19">计量标准的复查申请<a class="headerlink" href="#ch05-standard_creation-_19" title="Permanent link">&para;</a></h2>
+<h2 id="ch05-standard_creation-_20">计量标准的复查申请<a class="headerlink" href="#ch05-standard_creation-_20" title="Permanent link">&para;</a></h2>
 <p>申请合格后，由计量行政部门颁发计量考核合格证书，证书的有效期为 5 年。过了 5 年之后，想继续从事该项目的检校工作，需要向有关部门申请考核。  </p>
 <p>需要向有关部门提交 《计量标准考核（复查）申请书》、《计量标准技术报告》、《检定和校准的重复性实验》和《计量标准的稳定性考核记录》。</p>
 <p><strong>注意</strong>：新建标和复查申请交的材料有区别，新建两个材料，复查三个材料。  </p>
@@ -2128,7 +2147,7 @@
 <p><strong>复查需要</strong>：1《计量标准考核（复查）申请书》和《计量标准技术报告》 ； </p>
 <p>2计量标准考核证书有效期内计量标准器主要计量设备的有效检定证书；  </p>
 <p>3计量标准<strong>封存、注销、更换</strong>的申请材料。  </p>
-<h2 id="ch05-standard_creation-_20">计量标准考核的后续监管<a class="headerlink" href="#ch05-standard_creation-_20" title="Permanent link">&para;</a></h2>
+<h2 id="ch05-standard_creation-_21">计量标准考核的后续监管<a class="headerlink" href="#ch05-standard_creation-_21" title="Permanent link">&para;</a></h2>
 <p>包括计量标准和主要配套设备的更换、计量标准的封存和注销、计量标准的恢复和使用。</p>
 <h2 class="no-underline" id="ch05-standard_creation-references">引用来源<a class="headerlink" href="#ch05-standard_creation-references" title="Permanent link">&para;</a></h2>
 <div id="refer-anchor"></div>
@@ -2159,13 +2178,21 @@
 <p>（6）向比对组织者报送比对报告，并在一定范围内公布比对结果。  </p>
 <h2 id="ch05-metrology_comparison-_6">比对传递标准的要求<a class="headerlink" href="#ch05-metrology_comparison-_6" title="Permanent link">&para;</a></h2>
 <p>我们很自然地能想到，传递标准肯定应稳定可靠，不然传递几个实验室量值就发生变化，这会严重影响比对结果。  </p>
-<p>第二就是要确认比对线路，如果传递标准器稳定性水平较高时，可采用<strong>环式传递</strong>的方式，即主导实验室测量后，直接以此从各实验室流转。如果传递标准容易受到环境、运输等条件影响时，这时候应考虑<strong>花瓣式</strong>的传递方式，即每流转几个实验室，再次回到主导实验室，再以此流转到其他实验室，再回到主导实验室，这样一直进行下去。</p>
-<h2 id="ch05-metrology_comparison-_7">参考值数据处理<a class="headerlink" href="#ch05-metrology_comparison-_7" title="Permanent link">&para;</a></h2>
+<p>第二就是要确认比对线路，如果传递标准器稳定性水平较高时，可采用<strong>环式传递</strong>的方式，即主导实验室测量后，直接以此从各实验室流转。如果传递标准容易受到环境、运输等条件影响时，这时候应考虑<strong>花瓣式</strong>的传递方式，即每流转几个实验室，再次回到主导实验室，再以此流转到其他实验室，再回到主导实验室，这样一直进行下去。+</p>
+<h2 id="ch05-metrology_comparison-_7">比对方案需要的材料<a class="headerlink" href="#ch05-metrology_comparison-_7" title="Permanent link">&para;</a></h2>
+<p>大概有14个：</p>
+<p>1）概述；2）总体描述；3）实验室；4）传递标准描述；5）传递线路及比对时间；6）传递标准的运输和使用；7）传递标准的交接；8）比对方法和程序；9）意外情况处理程序；10）记录格式；11）参比实验室报告；12）参考值及数据处理方法；13）保密规定；14）其他注意事项。 </p>
+<h2 id="ch05-metrology_comparison-_8">参考值数据处理<a class="headerlink" href="#ch05-metrology_comparison-_8" title="Permanent link">&para;</a></h2>
 <p>参考值即此时比对约定的“真值”，各参比实验室的测量结果都与真值相比。那该值怎么来的呢？  </p>
 <p>可能的来源主要有两种，一是由主导实验室将传递标准送到国家计量基准校准并给出不确定度；  </p>
 <p>二是通过主导实验室给出，前提是自己的校准值不确定度要明显由于参比实验室；  </p>
-<p>三是通过各参比实验室的测量结果的加权平均值作为参考值，加权可以参考测量不确定度的大小。  即$$Y_{ri} = \frac{\sum_{j=1}^{n}\frac{Y_{ji}}{u_{ji}^2}}{\sum_{j=1}^{n}\frac{1}{u_{ji}^2}}$$   j表示第 j 个参比实验室，i表示第 i 个测点。</p>
-<h2 id="ch05-metrology_comparison-_8">比对结果的评价<a class="headerlink" href="#ch05-metrology_comparison-_8" title="Permanent link">&para;</a></h2>
+<p>三是通过各参比实验室的测量结果的加权平均值作为参考值，加权可以参考测量不确定度的大小。  即$$Y_{ri} = \frac{\sum_{j=1}^{n}\frac{Y_{ji}}{u_{ji}^2}}{\sum_{j=1}^{n}\frac{1}{u_{ji}^2}}$$   j表示第 j 个参比实验室，i表示第 i 个测点。  </p>
+<p>标准不确定度为：$$u_{ri} = \sqrt{\frac{1}{\sum_{j=1}^{n}\frac{1}{u_{ji}^2}}}$$  </p>
+<p><strong>如果直接取算术平均值</strong>：</p>
+<p>则 $$Y_{ri} = \frac{1}{n}\sum_{j=1}^{n}Y_{ji}$$其标准不确定度为：</p>
+<p>$$u_{ri} = \frac{1}{n}\sqrt{\sum_{j=1}^{n}u_{ji}^2}$$</p>
+<h3 id="ch05-metrology_comparison-_9">参考值的不确定度评价<a class="headerlink" href="#ch05-metrology_comparison-_9" title="Permanent link">&para;</a></h3>
+<h2 id="ch05-metrology_comparison-_10">比对结果的评价<a class="headerlink" href="#ch05-metrology_comparison-_10" title="Permanent link">&para;</a></h2>
 <p>比对结果通常使用 $E_n$ 值进行评价，$E_n$ 值又称为归一化偏差。$$E_n = \frac{Y_{ji}-Y_{ri}}{k*u_i}$$式中 k 表示覆盖因子，默认为 2； $u_i$为第 i 个测量点上 $Y_{ji}-Y{ri}$的标准不确定度。  </p>
 <p>那如何得到 $u_i$ 呢，设$u_{ri},u_{ei},u_{ji}$分别表示参考值测量不确定、传递标准在第 i 个测量点上比对传递环节引入的不确定度，第 j 个参比实验室测量不确定度。  </p>
 <p>如果此时的参考值由主导实验室给出，即 $u_{ri},u_{ei}$ 与 $u_{ji}$ 不相关，此时$$u_i = \sqrt{u_{ji}^2+u_{ei}^2+u_{ri}^2}$$</p>
@@ -2173,19 +2200,19 @@
 <p>比对测量结果一致性评判原则：  </p>
 <p>$|E_n| \leq 1$，参比实验室的测量结果与参考值之差与不确定之比<strong>在合理的预期范围之内</strong>，比对结果可接受。  </p>
 <p>$|E_n| &gt; 1$ 参比实验室的测量结果与参考值之差与不确定之比<strong>超出</strong>合理的预期，应分析原因。、</p>
-<h2 id="ch05-metrology_comparison-_9">比对过程与报告<a class="headerlink" href="#ch05-metrology_comparison-_9" title="Permanent link">&para;</a></h2>
-<h3 id="ch05-metrology_comparison-_10">比对过程<a class="headerlink" href="#ch05-metrology_comparison-_10" title="Permanent link">&para;</a></h3>
+<h2 id="ch05-metrology_comparison-_11">比对过程与报告<a class="headerlink" href="#ch05-metrology_comparison-_11" title="Permanent link">&para;</a></h2>
+<h3 id="ch05-metrology_comparison-_12">比对过程<a class="headerlink" href="#ch05-metrology_comparison-_12" title="Permanent link">&para;</a></h3>
 <p>主要有 4 个：1）比对前准备，检查设备是否齐全，状态是否好，计量标准是否在有效期内；  </p>
 <p>2）传递标准的交接；  </p>
 <p>3）比对实验；  </p>
 <p>4）向<strong>主导实验室</strong>，提交资料，包括原始数据、测量不确定评定报告等；    </p>
 <p>5）向比对组织者上报比对报告。</p>
-<h3 id="ch05-metrology_comparison-_11">比对报告<a class="headerlink" href="#ch05-metrology_comparison-_11" title="Permanent link">&para;</a></h3>
+<h3 id="ch05-metrology_comparison-_13">比对报告<a class="headerlink" href="#ch05-metrology_comparison-_13" title="Permanent link">&para;</a></h3>
 <p>1）比对数据收集；收集好各实验室的比对数据，如有数据的修改；提交原则上不能修改，如要修改，必须提交书面材料，告知理由；  </p>
 <p>2）数据处理 ；主导实验室按照比对实施方案的数据处理方式依次处理各参比实验室的数据，注意如果此时有实验室的数据明显偏移参考值，且此时参考值为各实验室测量结果的平均值时，应该按照<strong>格拉布斯准则</strong>剔除异常值，即$$\frac{|y_d-y_r|}{s} \geq G(\alpha,n)$$式中$G(\alpha,n)$表示与显著性水平$\alpha$及与参加比对的实验室数量 n 有关的格拉布斯临界值，需要查表获得。  </p>
 <p>3）总结报告内容；a 比对结果评价图；b En 值表。  </p>
 <p>4）比对总结会；  </p>
-<h2 id="ch05-metrology_comparison-_12">测量审核<a class="headerlink" href="#ch05-metrology_comparison-_12" title="Permanent link">&para;</a></h2>
+<h2 id="ch05-metrology_comparison-_14">测量审核<a class="headerlink" href="#ch05-metrology_comparison-_14" title="Permanent link">&para;</a></h2>
 <p>测量审核是两个实验室利用比对形式进行的能力验证。  </p>
 <p>测量审核应该测量盲样，即参比实验室不知道实际的值，参考值由主导实验室给出，参考 En 值判断参比实验室的能力。</p>
 <h2 class="no-underline" id="ch05-metrology_comparison-references">引用来源<a class="headerlink" href="#ch05-metrology_comparison-references" title="Permanent link">&para;</a></h2>
@@ -2205,12 +2232,12 @@
 <p>4）计量特性可能不同；检定或校准是在标准情况下，在实际工作中，其最大允许误差可能与校准时使用的不同。</p>
 <h2 id="ch05-period_checking-_4">期间核查的文件<a class="headerlink" href="#ch05-period_checking-_4" title="Permanent link">&para;</a></h2>
 <p>期间核查的文件主要包括程序文件和作业指导书。  </p>
-<p>程序文件包括一些分工流程、原则、期间核查方案以及超限的处理流程等；  </p>
+<p>程序文件包括一些分工流程、需要实施期间核查的计量标准、测量仪器确定原则、期间核查方案以及超限的处理流程等；  </p>
 <p>作业指导书是具体指导实验室人员如何进行期间核查的一份详细操作流程说明书。</p>
 <h2 id="ch05-period_checking-_5">期间核查的实施<a class="headerlink" href="#ch05-period_checking-_5" title="Permanent link">&para;</a></h2>
 <h3 id="ch05-period_checking-1">1、确定核查对象<a class="headerlink" href="#ch05-period_checking-1" title="Permanent link">&para;</a></h3>
 <p>确定我们要进行期间核查的对象，是计量标准? 标准物质？实物量具？等等 。</p>
-<p>期间核查的对象主要有：1）工作标准；2）辅助设备及其他测量仪器；3）实物量具和标准物质。  </p>
+<p>期间核查的对象主要有：1）工作标准；2）辅助设备及其他测量仪器；3）实物量具</p>
 <p>一般实物量具（如量块）的稳定性通常优于非实物量具的测量仪器，一般可以不必进行期间核查。  </p>
 <p><strong>注意</strong>：期间核查不包含标准物质。</p>
 <h3 id="ch05-period_checking-2">2、选择核查标准<a class="headerlink" href="#ch05-period_checking-2" title="Permanent link">&para;</a></h3>

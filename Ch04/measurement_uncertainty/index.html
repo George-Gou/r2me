@@ -1262,6 +1262,11 @@
 <td align="center">$a/\sqrt{2}$</td>
 <td align="center">$\sqrt{2}$</td>
 </tr>
+<tr>
+<td align="center">两点</td>
+<td align="center">a</td>
+<td align="center">1</td>
+</tr>
 </tbody>
 </table>
 <h2 id="gum">用GUM法评定测量不确定度<a class="headerlink" href="#gum" title="Permanent link">&para;</a></h2>
@@ -1318,7 +1323,7 @@
 <p>2、不能忽略的话，可以估计一下<strong>协方差参考值</strong>；对两个输入量$X_i,X_j$同时进行重复观测，设$x_{ik},x_{jk}$分别是输入量$X_i,x_j$的观测值。$k$为测量序号，$\bar{x_i},\bar{x_j}$分别是第$i$和第$j$个输入量的n次测量的算术平均值；则可用下式对协方差值进行估计：$$u(x_i,x_j)=\frac{1}{n-1}\sum_{k=1}^{n}(x_{ik}-\bar{x_i}(x_{ij}-\bar{x_j}))$$当协方差足够小时（其绝对值远远小于输入量标准偏差的乘积，则可以认为这两个输入量无关）。  </p>
 <p>注意，如果是平均值的话，还要除以一个 n ，即$$u(x_i,x_j)=\frac{1}{n(n-1)}\sum_{k=1}^{n}(x_{ik}-\bar{x_i}(x_{ij}-\bar{x_j}))$$</p>
 <p>3、<strong>关于相关系数的计算</strong>：$$r(x,y)  = \frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}{(n-1)s(x)x(y)}$$</p>
-<p>也可以用经验公式估计相关系数：$$r(x_i,x_j)<em>\approx</em>\frac{u(x_i)\delta_j}{x(x_j)\delta_i}$$，其中$\delta$表示输入量的变化量。 </p>
+<p>也可以用经验公式估计相关系数：$$r(x_i,x_j)\approx\frac{u(x_i)\delta_j}{x(x_j)\delta_i}$$，其中$\delta$表示输入量的变化量。 </p>
 <p>4、想办法消除相关性：（1）变换输入量，让两者不具有相关性，比如用高等别量块校准低等别量块的时候，两个量块的温度具有一定相关性，将标准量块的温度$\delta_s$和两者之差$\delta$作为输入量则两者相关性就显著减小了；  </p>
 <p>（2）如果输入量都与同一个变量有关系，比如$f(x_i,x_j)$中的$x_i,x_j$都与温度有关系，则可以将温度T也加入测量模型$f(x_i,x_j,T)$，这样两者就没有相关性了，但都与T有相关性；  </p>
 <h3 id="_10">有效自由度<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
